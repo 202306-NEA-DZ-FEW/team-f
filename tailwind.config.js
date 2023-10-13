@@ -11,17 +11,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': ['"Poppins"', "sans-serif"],
+        poppins: ['"Poppins"', "sans-serif"],
       },
       colors: {
-        'green': '#33956D',
-        'black': '#3C4347',
-        'red': '#F07167',
-        'gray': '#E9E9E9',
-      }
-
+        green: "#33956D",
+        black: "#3C4347",
+        red: "#F07167",
+        gray: "#E9E9E9",
+      },
     },
   },
   plugins: [],
-}
-
+};
