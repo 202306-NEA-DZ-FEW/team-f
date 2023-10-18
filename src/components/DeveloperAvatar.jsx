@@ -1,16 +1,19 @@
-// components/DeveloperAvatar.js
-
 import React from "react";
+import Image from "next/image";
 
 const DeveloperAvatar = ({ name, avatarUrl }) => {
     return (
-        <div className='developer-avatar m-4 sm:m-2 md:m-2 lg:m-2 xl:m-2'>
-            <img
-                src={avatarUrl}
-                alt={`${name}'s Avatar`}
-                className='rounded-full w-20 h-20 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-16 xl:h-16 mx-auto'
-            />
-            <p className='mt-2 text-center text-lg font-semibold'>{name}</p>
+        <div className='text-center'>
+            <div className='relative w-24 h-24 sm:w-20 sm:h-20 md:w-20 md:h-20 lg:w-20 lg:h-20 xl:w-20 xl:h-20 mb-2 mx-auto'>
+                <Image
+                    src={avatarUrl}
+                    alt={`${name}'s Avatar`}
+                    layout='fill'
+                    objectFit='cover'
+                    className='rounded-full'
+                />
+            </div>
+            <p className='text-lg font-semibold'>{name}</p>
         </div>
     );
 };
