@@ -1,12 +1,18 @@
 import React from "react";
+import {
+    BiLogoFacebookSquare,
+    BiLogoInstagram,
+    BiLogoLinkedinSquare,
+    BiSolidShareAlt,
+} from "react-icons/bi";
 
 const Footer = () => {
     return (
         <footer className='bg-green text-white'>
             <div className='container mx-auto flex justify-center items-center flex-wrap p-8'>
                 {/* Logo */}
-                <div className='mx-4 mb-4 mr-8 border '>
-                    <img src='/path/to/logo.png' alt='Logo' className='w-20 ' />
+                <div className='mx-4 mb-4 mr-8 '>
+                    <img src='./Logo/logo.png' alt='Logo' className='w-20 ' />
                 </div>
 
                 {/* Columns */}
@@ -34,20 +40,31 @@ const Footer = () => {
                     </div>
 
                     {/* Second Column */}
-                    <div cclassName='flex items-center mx-4 mb-4'>
+                    <div className='flex flex-col items-center mx-4 mb-4'>
                         <h2>Contact us</h2>
-                        <a href='#' className='text-black hover:text-white'>
-                            <i className='fa-facebook'></i>
-                        </a>
-                        <a href='#' className='text-black hover:text-white'>
-                            <i className=' fa-twitter'></i>
-                        </a>
-                        <a href='#' className='text-black hover:text-white'>
-                            <i className='fa-instagram'></i>
-                        </a>
-                        <a href='#' className='text-black hover:text-white'>
-                            <i className=' fa-linkedin'></i>
-                        </a>
+                        <div className='flex w-full space-x-2  p-2'>
+                            <a href='#' className='text-white hover:text-black'>
+                                <BiLogoFacebookSquare className='w-6 h-6' />
+                            </a>
+                            <a
+                                href='#'
+                                className='text-white hover:text-black '
+                            >
+                                <BiLogoInstagram className='w-6 h-6' />
+                            </a>
+                            <a
+                                href='#'
+                                className='text-white hover:text-black '
+                            >
+                                <BiLogoLinkedinSquare className='w-6 h-6' />
+                            </a>
+                            <a
+                                href='#'
+                                className='text-white hover:text-black '
+                            >
+                                <BiSolidShareAlt className='w-6 h-6' />
+                            </a>
+                        </div>
                     </div>
 
                     {/* Third Column */}
