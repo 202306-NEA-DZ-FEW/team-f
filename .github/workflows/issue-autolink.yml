@@ -9,8 +9,6 @@ jobs:
         steps:
             - uses: tkt-actions/add-issue-links@v1.6.0
               with:
-
                   repo-token: "${{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 }}"
-                 
 
                   resolve: "true"

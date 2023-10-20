@@ -1,5 +1,3 @@
-import React from "react";
-
 const CategoryCard = ({ category }) => {
     return (
         <div className='max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden'>
