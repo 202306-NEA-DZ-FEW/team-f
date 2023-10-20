@@ -1,5 +1,3 @@
-import React from "react";
-
 const BlogCard = ({ blog }) => {
     return (
         <div className='bg-white shadow-md rounded-xl ml-2 mr-2 mb-2 mt-2 px-2 py-2 verflow-hidden'>
