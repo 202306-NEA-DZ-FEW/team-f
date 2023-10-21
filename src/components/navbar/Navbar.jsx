@@ -52,40 +52,23 @@ function Navbar() {
                             </button>
                         </div>
                         <nav className='hidden space-x-10 md:flex'>
-                            <a
-                                href='/collections'
-                                className='text-base font-medium text-gray-500 hover:text-gray-900'
-                            >
-                                Collections
-                            </a>
-
-                            <a
-                                href='/pricing'
-                                className='text-base font-medium text-gray-500 hover:text-gray-900'
-                            >
-                                Pricing
-                            </a>
-
-                            <a
-                                href='/docs'
-                                className='text-base font-medium text-gray-500 hover:text-gray-900'
-                            >
-                                Documentation
-                            </a>
+                            {navigation.map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className='text-base font-medium text-black hover:text-red'
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
                         </nav>
                         <div className='items-center justify-end hidden md:flex md:flex-1 lg:w-0'>
-                            <a
-                                href='https://app.slashapi.com/login'
-                                className='text-base font-medium text-gray-500 whitespace-nowrap hover:text-gray-900'
-                            >
+                            <button className='text-base font-medium text-blck whitespace-nowrap hover:text-green'>
                                 Sign in
-                            </a>
-                            <a
-                                href='https://app.slashapi.com/register'
-                                className='inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm whitespace-nowrap hover:bg-indigo-700'
-                            >
+                            </button>
+                            <button className='inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white bg-green border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-75'>
                                 Sign up
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
