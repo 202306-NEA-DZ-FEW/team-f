@@ -91,6 +91,8 @@ function Navbar() {
 }
 
 const NavbarMobile = ({ openMenu, toggleMenu }) => {
+    const { currentUser, logout } = useAuth();
+
     return (
         <div
             className={`${
@@ -139,21 +141,39 @@ const NavbarMobile = ({ openMenu, toggleMenu }) => {
                         </nav>
                     </div>
                 </div>
+
                 <div className='px-5 py-6 space-y-6'>
-                    <div>
-                        <a
-                            href='/register'
-                            className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-green border border-transparent rounded-md shadow-sm '
-                        >
-                            Sign up
-                        </a>
-                        <p className='mt-6 text-base font-medium text-center text-gray-500'>
-                            You have an account?
-                            <Link href='/login' className='text-green '>
-                                Sign in
+                    {currentUser ? (
+                        <>
+                            <Link
+                                href='/account'
+                                className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-green border border-transparent rounded-md shadow-sm '
+                            >
+                                Your profile
                             </Link>
-                        </p>
-                    </div>
+                            <button
+                                onClick={logout}
+                                className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-red border border-transparent rounded-md shadow-sm '
+                            >
+                                Log Out
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <Link
+                                href='/register'
+                                className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-green border border-transparent rounded-md shadow-sm '
+                            >
+                                Sign up
+                            </Link>
+                            <p className='mt-6 text-base font-medium text-center text-gray-500'>
+                                You have an account?
+                                <Link href='/login' className='text-green '>
+                                    Sign in
+                                </Link>
+                            </p>
+                        </>
+                    )}
                 </div>
             </div>
         </div>
