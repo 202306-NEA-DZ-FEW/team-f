@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const AddItem = () => {
+const AddItem = ({produt, title}) => {
     return (
         <div className='flex flex-col justify-center items-center m-8 gap-10'>
             <span className='text-2xl text-zinc-700 font-bold'>My items</span>
@@ -12,7 +12,7 @@ const AddItem = () => {
                     src='1.png'
                     alt='product'
                 />
-                <p className='text-xl my-5'>Product title</p>
+                <p className='text-xl my-5'>{produt} {title}</p>
                 <button></button>
                 <button></button>
             </div>
