@@ -4,8 +4,6 @@ import { useRouter } from "next/router";
 
 import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/blogApi";
 
-import Layout from "@/layout/Layout";
-
 const PostHeader = ({ title, image, imageAlt, date, timeToRead }) => {
     return (
         <>
@@ -42,7 +40,7 @@ export default function Post({ post }) {
         return <ErrorPage statusCode={404} />;
     }
     return (
-        <Layout>
+        <>
             {router.isFallback ? (
                 <h1>Loading…</h1>
             ) : (
@@ -57,7 +55,7 @@ export default function Post({ post }) {
                     </article>
                 </>
             )}
-        </Layout>
+        </>
     );
 }
 
