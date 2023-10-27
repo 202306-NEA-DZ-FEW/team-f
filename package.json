@@ -19,6 +19,7 @@
         "prepare": "husky install"
     },
     "dependencies": {
+        "class-variance-authority": "^0.7.0",
         "clsx": "^2.0.0",
         "date-fns": "^2.30.0",
         "eslint-plugin-jest": "^27.4.2",
@@ -33,7 +34,8 @@
         "react-router-dom": "^6.16.0",
         "react-test-renderer": "^18.2.0",
         "remark": "^15.0.1",
-        "remark-html": "^16.0.1"
+        "remark-html": "^16.0.1",
+        "tailwind-merge": "^1.14.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.7.2",
