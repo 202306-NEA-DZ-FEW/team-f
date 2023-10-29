@@ -16,7 +16,6 @@ const UseUploadImage = () => {
     const [error, setError] = useState("");
     const [uploading, setUploading] = useState(false);
     const [snapshot, setSnapshot] = useState();
-    const [imageUrl, setImageUrl] = useState("/");
 
     const uploadFile = useCallback(async (data, metadata = "") => {
         const storageRef = ref(storage, `images/${data.name}`);
@@ -39,7 +38,7 @@ const UseUploadImage = () => {
                 () => {
                     getDownloadURL(uploadTask.snapshot.ref).then(
                         (downloadURL) => {
-                            setImageUrl(downloadURL);
+                            resolve(downloadURL);
                         },
                     );
                 },
@@ -47,6 +46,6 @@ const UseUploadImage = () => {
         });
     }, []);
 
-    return [uploadFile, uploading, snapshot, imageUrl, error];
+    return [uploadFile, uploading, snapshot, error];
 };
 export default UseUploadImage;
