@@ -17,8 +17,8 @@ const SingleItemCard = ({
     };
 
     return (
-        <div className='flex mb-4 m-4 h-full'>
-            <div className='w-1/2 flex flex-col justify-center items-center mr-8'>
+        <div className='md:flex md:flex-row md:justify-center md:items-start  md:mb-4 md:m-4 h-full sm:flex-col-reverse sm:mb-4 sm:items-center sm:m-4'>
+            <div className='md:w-1/2 sm:w-full flex flex-col justify-center items-center mr-8'>
                 <div className='rounded-xl h-[400px] w-full align-middle justify-center '>
                     <img
                         src={mainImage}
@@ -37,14 +37,16 @@ const SingleItemCard = ({
                                 alt={title}
                                 onClick={() => handleClickImage(image)}
                                 className={`${
-                                    image === mainImage ? "active" : ""
+                                    image === mainImage
+                                        ? "active "
+                                        : "opacity-70"
                                 } cover w-full h-full rounded-xl`}
                             />
                         </div>
                     ))}
                 </div>
             </div>
-            <div className='w-1/2 py-4'>
+            <div className='md:w-1/2 py-4 sm:w-full'>
                 <h1 className='text-4xl mb-4'>{title}</h1>
                 <p className='mb-4'>{description}</p>
                 <div className='ml-0 text-2xl px-3 py-2'>
