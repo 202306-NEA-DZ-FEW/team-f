@@ -1,4 +1,4 @@
-const PersonalInfo = ({name, surname, location, phone, email}) => {
+const PersonalInfo = ({ name, surname, location, phone, email }) => {
     return (
         <div className='flex lg:flex-cols-2 flex-wrap lg:flex-nowrap lg:ml-8 gap-8'>
             <div className='flex flex-wrap justify-center lg:w-64 '>
@@ -14,14 +14,18 @@ const PersonalInfo = ({name, surname, location, phone, email}) => {
                     />
                 </svg>
                 <div className='mt-4 text-xl lg:my-2 lg:ml-10'>
-                    <span>{name} {surname}</span>
+                    <span>
+                        {name} {surname}
+                    </span>
                     <p>{location}</p>
                 </div>
             </div>
 
             <div className='lg:w-2/3 h-64  m-6 bg-neutral-100 rounded-3xl lg:mt-6'>
                 <div className='m-8 text-xl flex flex-col justify-evenly'>
-                    <span className='my-1'>{name} {surname}</span>
+                    <span className='my-1'>
+                        {name} {surname}
+                    </span>
                     <span className='my-1'>{location}</span>
                     <span className='my-1'>Phone: {phone}</span>
                     <span className='my-1'>Email: {email}</span>
