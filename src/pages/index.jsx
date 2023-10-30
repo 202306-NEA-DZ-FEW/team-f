@@ -9,7 +9,7 @@ export default function HomePage() {
     const { t } = useTranslation("common");
 
     return (
-        <Layout>
+        <>
             <p>{t("test")}</p>
             <div style={{ display: "flex", flexDirection: "row", gap: "20px" }}>
                 <Link href='/' locale='en'>
@@ -19,7 +19,7 @@ export default function HomePage() {
                     العربية
                 </Link>
             </div>
-        </Layout>
+        </>
     );
 }
 
