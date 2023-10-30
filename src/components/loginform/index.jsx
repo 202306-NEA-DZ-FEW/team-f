@@ -1,25 +1,24 @@
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import { useState } from "react";
+
+import Button from "@/components/button/Button";
+
 import { useAuth } from "@/context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { login, currentUser } = useAuth();
-    const navigate = useNavigate();
+    const router = useRouter();
 
     function handleLogin(e) {
         e.preventDefault();
-        console.log("whatever");
         login(email, password)
             .then(() => {
-                navigate("/account");
+                router.push("/account");
             })
-            .catch((error) => {
-                console.log("error");
-            });
+            .catch((error) => {});
     }
-    console.log(currentUser);
 
     return (
         <div className='flex justify-center items-center h-screen'>
@@ -36,7 +35,7 @@ export default function LoginForm() {
                             Email
                         </label>
                         <input
-                            className='border-emerald-600 border-2 appearance-none border rounded-2xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                            className='border-green border-2 appearance-none  rounded-2xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                             id='email'
                             type='email'
                             placeholder='example@company.com'
@@ -53,7 +52,7 @@ export default function LoginForm() {
                             Password
                         </label>
                         <input
-                            className='border-emerald-600 border-2 appearance-none border rounded-2xl w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
+                            className='border-green border-2 appearance-none  rounded-2xl w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
                             id='password'
                             type='password'
                             placeholder='********'
@@ -71,13 +70,9 @@ export default function LoginForm() {
                             Keep me logged in
                         </label>
                     </div>
-                    <button
-                        className='bg-[#16a34a] hover:bg-[#16a32a] active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 w-full rounded-2xl py-2 px-4'
-                        type='submit'
-                        onClick={(e) => handleLogin(e)}
-                    >
+                    <Button size='full' onClick={(e) => handleLogin(e)}>
                         Log in
-                    </button>
+                    </Button>
                 </form>
                 <div className='text-center'>
                     Don&apos;t have an account?{" "}
@@ -91,7 +86,7 @@ export default function LoginForm() {
                         Forgot Password?
                     </a>
                 </div>
-                <div className='my-4 text-center'>
+                {/* <div className='my-4 text-center'>
                     <p className='font-bold'>Log in with:</p>
                     <div className='flex justify-center'>
                         <button className='bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mx-2'>
@@ -104,7 +99,7 @@ export default function LoginForm() {
                             Facebook
                         </button>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
