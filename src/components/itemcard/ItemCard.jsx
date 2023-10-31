@@ -1,28 +1,28 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-const ItemCard = ({ item }) => {
+import Image from "next/image";
+const ItemCard = ({ image, title, location, description }) => {
     return (
-        <div className='bg-white shadow-md rounded-xl ml-2 mr-2 mb-2 mt-2 px-2 py-2 overflow-hidden'>
-            <div className='relative '>
-                <img
-                    src={item.image}
-                    alt={item.title}
-                    className='w-full h-48 object-cover rounded-xl'
+        <div className='bg-white shadow-md rounded-xl mt-2 mb-8 p-2 w-48 h-56 overflow-hidden'>
+            {/* <div className='relative '>
+                <Image
+                    src={image}
+                    alt={title}
+                    className='w-10 h-48 object-cover rounded-xl'
                 />
-            </div>
-            <div className='p-6'>
-                <p className='ml-0 text-2xl px-3 py-2'>
+            </div> */}
+            <div className='pt-3 pl-1 mt-28'>
+                <p className='text-base px-3'>
                     <FontAwesomeIcon
                         icon='fa-solid fa-location-dot'
                         style={{ color: "#ff0000" }}
                     />{" "}
-                    {item.location}
+                    {location}
                 </p>
 
-                <h3 className='text-2xl  font-semibold text-gray-800 mb-2 '>
-                    {item.title}
+                <h3 className='text-base font-semibold text-gray-800'>
+                    {title}
                 </h3>
-                <p className='text-gray-700'>{item.description}</p>
+                <p className='text-gray-700 text-xs'>{description}</p>
             </div>
         </div>
     );

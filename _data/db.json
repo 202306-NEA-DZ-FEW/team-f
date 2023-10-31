@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "category": "Electronics",
+      "title": "Smartphone",
+      "description": "A high-end smartphone",
+      "location": "New York"
+    },
+    {
+      "id": 2,
+      "category": "Clothing",
+      "title": "T-Shirt",
+      "description": "A comfortable and stylish t-shirt.",
+      "location": "Los Angeles"
+    },
+    {
+      "id": 3,
+      "category": "Home",
+      "title": "Sofa",
+      "description": "A cozy sofa for your living room.",
+      "location": "Chicago"
+    },
+    {
+      "id": 4,
+      "category": "Books",
+      "title": "Novel",
+      "description": "An intriguing mystery novel",
+      "location": "London"
+    },
+    {
+      "id": 5,
+      "category": "Toys",
+      "title": "Blocks",
+      "description": "Educational wooden blocks",
+      "location": "Paris"
+    }
+  ]
+}
