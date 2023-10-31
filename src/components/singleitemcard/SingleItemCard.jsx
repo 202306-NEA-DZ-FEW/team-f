@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+/* eslint-disable @next/next/no-img-element */
+import { useState } from "react";
 
 const SingleItemCard = ({
     images,
@@ -49,15 +49,8 @@ const SingleItemCard = ({
             <div className='md:w-1/2 py-4 sm:w-full'>
                 <h1 className='text-4xl mb-4'>{title}</h1>
                 <p className='mb-4'>{description}</p>
-                <div className='ml-0 text-2xl px-3 py-2'>
-                    <FontAwesomeIcon
-                        icon='fa-solid fa-location-dot'
-                        style={{ color: "#ff0000" }}
-                    />
-                    {location}
-                </div>
+                <div className='ml-0 text-2xl px-3 py-2'>{location}</div>
                 <div className='mt-4'>
-                    <FontAwesomeIcon icon='fa-solid fa-user' />
                     <p>Name : {name}</p>
                     <p>Phone : {phone}</p>
                     <p>Email: {email}</p>
