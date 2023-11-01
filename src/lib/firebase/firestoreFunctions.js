@@ -73,11 +73,16 @@ export const getItemsByUser = async (userId) => {
 };
 
 export const getItemByCategory = async (category) => {
-    const q = query(collection(db, "items"), where("category", "==", category));
+    const q = query(
+        collection(db, "items"),
+        where("categories", "==", category),
+    );
     const querySnapshot = await getDocs(q);
     const items = [];
     querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        let data = doc.data();
+        data.id = doc.id;
+        items.push(data);
     });
     return items;
 };
