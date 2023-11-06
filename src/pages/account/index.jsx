@@ -1,35 +1,61 @@
+import { useEffect, useState } from "react";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
+
+import { getItemsByUser } from "@/lib/firebase/firestoreFunctions";
+
+import DeleteWarning from "@/components/delete-warning";
+import ItemCard from "@/components/itemcard/ItemCard";
 import Profile from "@/components/profile/Profile";
 
-import Layout from "@/layout/Layout";
+import { useAuth } from "@/context/AuthContext";
 
 export default function MyAccount() {
-    return <Profile />;
-}
+    const { currentUser } = useAuth();
+    const [items, setItems] = useState([]);
+    const [deleteWarningItem, setDeleteWarningItem] = useState();
 
-export async function getStaticProps() {
-    try {
-        const info = {
-            surname: "ismail",
-            location: "istanbul",
-            phone: "123456789",
-            email: "ismail@ismail",
-        };
+    useEffect(() => {
+        getItemsByUser(currentUser.uid).then((data) => {
+            setItems(data);
+        });
+    }, [currentUser]);
+    return (
+        <>
+            {deleteWarningItem && (
+                <DeleteWarning
+                    setDeleteWarningItem={setDeleteWarningItem}
+                    deleteWarningItem={deleteWarningItem}
+                    setItems={setItems}
+                    items={items}
+                />
+            )}
 
-        // if (!info) {
-        //     // Handle the case where 'info' is missing or undefined
-        //     console.error("Info not found.");
-        //     return {
-        //         notFound: true,
-        //     };
-        // }
+            <Profile />
+            <div className='mt-5 w-full py-5 '>
+                <h2 className='text-2xl mb-5 text-black font-medium'>
+                    My Items:
+                </h2>
 
-        return {
-            props: { info },
-        };
-    } catch (error) {
-        console.error("Error fetching info:", error);
-        return {
-            notFound: true,
-        };
-    }
+                <div className='flex flex-wrap gap-6'>
+                    {items.map((item) => (
+                        <div
+                            className='relative flex justify-end group'
+                            key={item.id}
+                        >
+                            <div className='transition hidden absolute top-5 gap-8 py-1 px-2 self-end group-hover:flex bg-white rounded-lg '>
+                                <AiOutlineDelete
+                                    onClick={() =>
+                                        setDeleteWarningItem(item.id)
+                                    }
+                                    className='text-red text-3xl cursor-pointer'
+                                />
+                                <AiOutlineEdit className='text-black text-3xl cursor-pointer' />
+                            </div>
+                            <ItemCard item={item} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </>
+    );
 }
