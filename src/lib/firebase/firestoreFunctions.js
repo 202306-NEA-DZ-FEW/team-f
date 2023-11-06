@@ -1,6 +1,7 @@
 import {
     addDoc,
     collection,
+    deleteDoc,
     doc,
     getDoc,
     getDocs,
@@ -67,7 +68,9 @@ export const getItemsByUser = async (userId) => {
     const querySnapshot = await getDocs(q);
     const items = [];
     querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        let data = doc.data();
+        data.id = doc.id;
+        items.push(data);
     });
     return items;
 };
@@ -85,4 +88,10 @@ export const getItemByCategory = async (category) => {
         items.push(data);
     });
     return items;
+};
+
+// DELETE DOC
+
+export const deleteDocData = async (collection, docId) => {
+    return await deleteDoc(doc(db, collection, docId));
 };

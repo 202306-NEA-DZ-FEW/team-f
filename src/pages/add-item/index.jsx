@@ -1,10 +1,11 @@
 import { clsx } from "clsx";
 import { serverTimestamp } from "firebase/firestore";
+import { useRouter } from "next/router";
 import { appWithTranslation } from "next-i18next";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { setDoc } from "@/lib/firebase/firestoreFunctions";
+import { setDoc, updateDocData } from "@/lib/firebase/firestoreFunctions";
 import UseUploadImage from "@/lib/hooks/useUploadImage";
 
 import Button from "@/components/button/Button";
@@ -14,15 +15,32 @@ import { useAuth } from "@/context/AuthContext";
 
 function AddItemPage() {
     const { currentUser } = useAuth();
-    const [files, setFiles] = useState([]);
+    const router = useRouter();
+    const [files, setFiles] = useState();
     const [uploadFile] = UseUploadImage();
+    const itemQueryData = router.query;
+    const updateItemPageMode = !itemQueryData.isEmpty;
+    let inputDefaultValues = {};
+    if (updateItemPageMode) {
+        inputDefaultValues = {
+            itemName: itemQueryData.title,
+            category: itemQueryData.categories,
+            description: itemQueryData.description,
+            location: itemQueryData.location,
+        };
+        if (typeof itemQueryData.imagesList === "string") {
+            itemQueryData.imagesList = [itemQueryData.imagesList];
+        }
+    }
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
         reset,
         clearErrors,
-    } = useForm();
+    } = useForm({
+        defaultValues: inputDefaultValues,
+    });
 
     const submitItem = async (data) => {
         const uploadPromises = files.map(async (file) => {
@@ -48,15 +66,38 @@ function AddItemPage() {
         await setDoc(itemData, "items");
         reset();
     };
+    const updateItem = async (data) => {
+        let downloadUrls;
+        if (files) {
+            const uploadPromises = files.map(async (file) => {
+                return await uploadFile(file);
+            });
+            downloadUrls = await Promise.all(uploadPromises);
+        }
+        const itemData = {
+            title: data.itemName,
+            categories: data.category,
+            description: data.description,
+            location: data.location,
+            imagesList: downloadUrls ? downloadUrls : itemQueryData.imagesList,
+            updatedAt: serverTimestamp(),
+        };
+        await updateDocData("items", itemQueryData.id, itemData);
+        router.push(`/item/${itemQueryData.id}`);
+    };
     return (
         <div className='mb-28'>
             <h1 className='text-center text-3xl font-semibold mt-16 mb-10 text-black'>
-                Add new Item
+                {updateItemPageMode ? "Update Item" : "Add new Item"}
             </h1>
             <form className='flex flex-col w-[80%] lg:w-[60%] mx-auto text-black'>
                 <div className='mb-4'>
                     <FileInput
-                        files={files}
+                        files={
+                            updateItemPageMode && !files
+                                ? itemQueryData.imagesList
+                                : files
+                        }
                         setFiles={setFiles}
                         register={register}
                         errors={errors}
@@ -169,7 +210,11 @@ function AddItemPage() {
                 </div>
 
                 <Button
-                    onClick={handleSubmit(submitItem)}
+                    onClick={
+                        updateItemPageMode
+                            ? handleSubmit(updateItem)
+                            : handleSubmit(submitItem)
+                    }
                     variant='default'
                     size='lg'
                     className={clsx("mt-10 mx-auto", {
@@ -178,7 +223,7 @@ function AddItemPage() {
                     })}
                     disabled={isSubmitting}
                 >
-                    upload item
+                    {updateItemPageMode ? "Update item" : "Add new item"}
                 </Button>
             </form>
         </div>
