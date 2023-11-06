@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 
@@ -29,7 +30,6 @@ export default function MyAccount() {
                     items={items}
                 />
             )}
-
             <Profile />
             <div className='mt-5 w-full py-5 '>
                 <h2 className='text-2xl mb-5 text-black font-medium'>
@@ -49,7 +49,14 @@ export default function MyAccount() {
                                     }
                                     className='text-red text-3xl cursor-pointer'
                                 />
-                                <AiOutlineEdit className='text-black text-3xl cursor-pointer' />
+                                <Link
+                                    href={{
+                                        pathname: "/add-item",
+                                        query: item,
+                                    }}
+                                >
+                                    <AiOutlineEdit className='text-black text-3xl cursor-pointer' />
+                                </Link>
                             </div>
                             <ItemCard item={item} />
                         </div>
