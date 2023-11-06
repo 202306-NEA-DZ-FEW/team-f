@@ -1,10 +1,13 @@
-import { useState } from "react";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import Link from "next/link";
 import { useRouter } from "next/router"; // Import useRouter
+import { useState } from "react";
+
 import Button from "@/components/button/Button";
 
 export default function ResetPasswordForm() {
     const [email, setEmail] = useState("");
+    const [errorMessage, setErrorMessage] = useState();
     const router = useRouter(); // Use useRouter
     const auth = getAuth();
 
@@ -15,7 +18,7 @@ export default function ResetPasswordForm() {
                 router.push("/login"); // Use router.push
             })
             .catch((error) => {
-                console.log("Error:", error);
+                setErrorMessage(error.message);
             });
     }
 
@@ -27,6 +30,9 @@ export default function ResetPasswordForm() {
                 </h1>
                 <form className='bg-white rounded px-8 pt-6 pb-8 mb-4'>
                     <div className='mb-4'>
+                        {errorMessage && (
+                            <p className='text-red'>{errorMessage}</p>
+                        )}
                         <label
                             className='block text-gray-700 text-sm font-bold mb-2'
                             htmlFor='email'
@@ -48,9 +54,9 @@ export default function ResetPasswordForm() {
                     </Button>
                 </form>
                 <div className='text-center'>
-                    <a className='underline' href='/login'>
+                    <Link className='underline' href='/login'>
                         Back to Login
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
