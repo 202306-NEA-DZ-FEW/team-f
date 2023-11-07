@@ -19,7 +19,7 @@ function AddItemPage() {
     const [files, setFiles] = useState();
     const [uploadFile] = UseUploadImage();
     const itemQueryData = router.query;
-    const updateItemPageMode = !itemQueryData.isEmpty;
+    const updateItemPageMode = Object.keys(itemQueryData).length !== 0;
     let inputDefaultValues = {};
     if (updateItemPageMode) {
         inputDefaultValues = {
