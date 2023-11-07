@@ -12,3 +12,10 @@
 .brd {
     border: 1px solid red;
 }
+
+.text-input:focus {
+    outline: none;
+}
+.search-result:hover {
+    background-color: #efefef;
+}
