@@ -10,7 +10,7 @@ const LocationSearch = () => {
         <div className='bg-[#eee] h-96 w-full'>
             <div className='flex flex-col items-center pt-24 w-2/6 m-auto'>
                 <SearchLocation setResults={setResults} />
-                <SearchResultsList results={results}/>
+                <SearchResultsList results={results} />
             </div>
         </div>
     );
