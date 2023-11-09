@@ -15,8 +15,8 @@ const buttonVariantStyle = cva(
                     "bg-transparent border-2 border-red text-red hover:bg-rose-100 active:ring-2 active:ring-red ",
             },
             size: {
-                default: "h-9 py-3 px-6 gap-3",
-                lg: "h-10 px-8 gap-4",
+                default: "h-9 py-3 px-6 gap-3 w-fit",
+                lg: "h-10 px-8 gap-4 w-fit",
                 full: "w-full h-10 px-8 gap-4",
             },
         },
