@@ -8,9 +8,9 @@ import Layout from "@/layout/Layout";
 function MyApp({ Component, pageProps }) {
     return (
         <AuthProvider>
-            {/* <Layout> */}
+            <Layout>
                 <Component {...pageProps} />
-            {/* </Layout> */}
+            </Layout>
         </AuthProvider>
     );
 }

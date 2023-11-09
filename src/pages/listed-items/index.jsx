@@ -5,7 +5,6 @@ import Footer from "@/components/footer/Footer";
 import ItemCard from "@/components/itemcard/ItemCard";
 import Navbar from "@/components/navbar/Navbar";
 
-
 //hey you need to run the server of the fake api (json-server --watch --port 4000 ./_data/db.json) in order for this page to work,
 // also fontawesome won't work for some reason and the advanced search still needs to be reviewed in order to be merged. if u click on the click me it will take u to another page yay.
 // I made a couple of tweaks to the itemcard and category so it could look descent.
@@ -13,7 +12,6 @@ import Navbar from "@/components/navbar/Navbar";
 export default function Information({ id, items }) {
     return (
         <div>
-            <Navbar />
             <Link href={`listed-items/${id}`}>
                 <h1>Click Me</h1>
             </Link>
@@ -40,8 +38,6 @@ export default function Information({ id, items }) {
                     </div>
                 ))}
             </div>
-
-            <Footer />
         </div>
     );
 }
