@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const CategoryCard = ({title, image, category}) => {
+const CategoryCard = ({ title, image, category }) => {
     return (
         <div className='max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden h-36 w-36 '>
             {/* <Image
