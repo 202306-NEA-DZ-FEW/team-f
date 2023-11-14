@@ -1,8 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 
-const SearchLocation = ({ setResults }) => {
+const SearchComponent = () => {
+    const [results, setResults] = useState([]);
     const [input, setInput] = useState("");
+    const [selected, setSelected] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(true);
 
     const locationStates = [
         "Adrar",
@@ -76,24 +79,54 @@ const SearchLocation = ({ setResults }) => {
                 name: location,
             })),
         );
+        setShowDropdown(true);
     };
 
-    const handleChange = (value) => {
+    const handleLocationClick = (selectedLocation) => {
+        setSelected(!selected);
+        setInput(selectedLocation);
+        setShowDropdown(false);
+    };
+
+    const handleInputChange = (value) => {
         setInput(value);
         fetchData(value);
     };
 
     return (
-        <div className='bg-white h-2.5 px-5 py-6 rounded-2xl shadow-lg flex items-center w-68'>
-            <FaLocationDot className='bg-transparent border-none h-96 text-3xl w-4 text-lime-700 ' />
-            <input
-                className='ml-3 text-input '
-                placeholder='Location...'
-                value={input}
-                onChange={(e) => handleChange(e.target.value)}
-            />
+        <div className='flex flex-col items-center relative'>
+            <div className='bg-white h-2.5 px-5 py-6 rounded-2xl shadow-lg flex items-center w-68'>
+                <FaLocationDot
+                    className={`bg-transparent border-none h-96 text-3xl w-4 text-lime-700 ${
+                        selected ? "selected" : ""
+                    }`}
+                    onClick={() => handleLocationClick(input)}
+                />
+                <input
+                    className='ml-3 text-input'
+                    placeholder='Location...'
+                    value={input}
+                    onChange={(e) => handleInputChange(e.target.value)}
+                />
+            </div>
+
+            {showDropdown && (
+                <div className='w-auto bg-white flex flex-col shadow-lg rounded-2xl mt-4 h-60 overflow-y-auto'>
+                    {results.map((result) => (
+                        <div
+                            className={`p-1 search-result w-44 cursor-pointer ${
+                                selected ? "selected" : ""
+                            }`}
+                            key={result.id}
+                            onClick={() => handleLocationClick(result.name)}
+                        >
+                            {result.name}
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
 
-export default SearchLocation;
+export default SearchComponent;
