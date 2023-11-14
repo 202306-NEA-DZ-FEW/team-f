@@ -33,7 +33,7 @@ const SearchComponent = () => {
         "Jijel",
         "Khenchela",
         "Laghouat",
-        "M'Sila",
+        "MSila",
         "Mascara",
         "Medea",
         "Mila",
