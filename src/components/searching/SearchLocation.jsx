@@ -59,7 +59,7 @@ const SearchComponent = () => {
         "Timimoun",
         "Bordj Badji Mokhtar",
         "Ouled Djellal",
-        "Béni Abbès",
+        "Beni Abbès",
         "Ain Salah",
         "Ain Guezzam",
         "Touggourt",
