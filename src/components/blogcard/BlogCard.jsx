@@ -1,3 +1,4 @@
+import Image from "next/image";
 const BlogCard = ({ blog }) => {
     return (
         <div className='bg-white shadow-md rounded-xl ml-2 mr-2 mb-2 mt-2 px-2 py-2 verflow-hidden'>
@@ -7,7 +8,7 @@ const BlogCard = ({ blog }) => {
                         {blog.date}
                     </p>
                 </div>
-                <img
+                <Image
                     src={blog.image}
                     alt={blog.title}
                     className='w-full h-48 object-cover rounded-xl'
