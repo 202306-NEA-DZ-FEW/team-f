@@ -59,7 +59,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const paths = [{ params: { id: "51ODFz5Jd1DAQlM2CpMH" } }];
+    const paths = [{ params: { id: "" } }];
     return { paths, fallback: "blocking" };
 }
 
