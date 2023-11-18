@@ -3,9 +3,20 @@ import Link from "next/link";
 import { useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { MdAccountCircle } from "react-icons/md";
+import { useRouter } from "next/router";
+import { reload } from "firebase/auth";
 
 const AccountMenu = ({ logout }) => {
     const [openMenu, setOpenMenu] = useState(false);
+    const router = useRouter();
+
+    const handleLogout = () => {
+        // Perform logout action (call the provided logout function)
+        logout();
+
+        // Redirect to the home page
+        router.push("/");
+    };
 
     return (
         <div className='relative items-center justify-end hidden md:flex '>
@@ -38,7 +49,7 @@ const AccountMenu = ({ logout }) => {
                         </div>
                     </Link>
                     <button
-                        onClick={logout}
+                        onClick={handleLogout}
                         className='text-red whitespace-nowrap hover:opacity-75'
                     >
                         <div className='flex flex-row items-center gap-4 '>
