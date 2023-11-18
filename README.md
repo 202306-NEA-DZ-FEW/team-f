@@ -1,27 +1,55 @@
-# Capstone project information
+# Welcome to Let's Share
 
-## Project information
+## Project Description
 
--   Project name: [Project name]
--   Project description: [Project description]
--   Technology used: Nextjs, TailwindCSS, i18next, Husky, Prettier, Eslint, Commitlinter (Conventional Commits)
--   Team members: Member1, Member2, etc,
--   Bootcamp: GIZ YE 2022
+Join Let's Share, where sharing is caring! Experience the magic of seamless connections as surplus food, stylish clothes, and cozy furniture find new homes through our user-friendly interface. Let's Share isn't just a platform; it's a front-end showcase, weaving together technology and warmth. Transform your daily exchanges into shared moments. Join us – where front-end innovation meets community connection!
 
-## Installation
+## Key Features
 
-```shell
-npm install -g commitizen // Installs commitizen
-npx husky install         // Installs Husky
-chmod ug+x .husky/*       // Gives husky executable extension
-npm install               // Installs the node modules
-```
+Homepage
+Sign in page
+Sign up page
+List of products page
+Profile page
+About us page
+Blog page
+Single blog page
+Filter Products: Easily filter products by name, category, and price.
+User Authentication: Create accounts, log in, and log out.
+Product Details: View detailed descriptions of products.
+Responsive Design: Ensure accessibility on various devices.
 
-## Development process
+## Technology Stack
 
--   When commiting you will have to use `git cz` and then go through the process. Look at the first commit I made to know what that means.
--   The translation process is done using the i18next library. There's an example in the index.js file of how this is done. Check this github project for more info on how to use the i18next library: [i18next](https://github.com/i18next/next-i18next)
--   When writing commits, commitlinter library is used to make sure that your commits are consistent with the conventional commits. To learn more about it refer to the guidelines in Canvas or the [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) site.
--   The `layout` folder contains the components that will be used in the layout of pages, so components like the header and footer will be placed there.
+Frontend: Next.js
+Database: Firestore
+Authentication: Firebase
+Styling: CSS, Tailwind CSS
 
-Good luck and happy coding :D
+## Project Goals
+
+Share and reuse products like clothes and furniture amongst the community
+
+## Team Members
+
+Ismail Benlaredj : https://github.com/ismail-benlaredj
+Darine Tag : https://github.com/darinetag
+Hadj Said Bouras : https://github.com/Hadj-Said-Bouras
+Mohamed Cheraitia : https://github.com/mohamed-cheraitia
+Laid Benglia : https://github.com/LaidBengli
+Sara Bagache : https://github.com/SaraBegache
+
+## Getting Started
+
+To run this project locally, follow these steps:
+
+creat a next.js file
+Clone the repository: git clone https://github.com/202306-NEA-DZ-FEW/team-f
+Navigate to the project directory: cd recoded-capstone
+Install dependencies: npm install
+Start the development server: npm run dev
+Open your browser and visit http://localhost:3000
+
+## Bootcamp
+
+Bootcamp: 202306-NEA-DZ-FEW
