@@ -2,16 +2,17 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import * as React from "react";
-import Layout from "@/layout/Layout";
-import HeroSection from "@/components/herosection/HeroSection";
-import SecondHeroSection from "@/components/secondherosection/SecondHeroSec";
-import ArticleCard from "@/components/articlecard/ArticleCard";
 import { getAllPosts } from "@/lib/blogApi";
+import ArticleCard from "@/components/articlecard/ArticleCard";
+import HeroSection from "@/components/herosection/HeroSection";
+import ItemCard from "@/components/itemcard/ItemCard";
+import Card from "@/components/marketing-card/Card";
 import SectionWithCards from "@/components/marketing-card/SectionWithCards";
+import SecondHeroSection from "@/components/secondherosection/SecondHeroSec";
 import { marketingCardData1 } from "@/constants";
 import { marketingCardData2 } from "@/constants";
-import Card from "@/components/marketing-card/Card";
-import ItemCard from "@/components/itemcard/ItemCard";
+import Layout from "@/layout/Layout";
+import Image from "next/image";
 
 const HomePage = ({ allPosts }) => {
     const { t } = useTranslation("common");
@@ -42,13 +43,6 @@ const HomePage = ({ allPosts }) => {
             title: "Item 4",
             description: "Description for Item 5",
             location: "Location 4",
-            imagesList: ["/item2-image.jpg"],
-        },
-        {
-            id: 5,
-            title: "Item 5",
-            description: "Description for Item 5",
-            location: "Location 5",
             imagesList: ["/item2-image.jpg"],
         },
     ];
@@ -86,24 +80,65 @@ const HomePage = ({ allPosts }) => {
                     />
                 ))}
             </SecondHeroSection>
-            <div className='flex mt-32 flex-wrap  '>
+            <div className='flex space-x-2 mt-32 flex-wrap w-full items-center justify-center  '>
                 {itemsList.map((item) => (
-                    <div key={item.id} className='w-1/5'>
+                    <div key={item.id} className=''>
                         <ItemCard item={item} />
                     </div>
                 ))}
             </div>
 
             {allPosts.map((post, index) => (
-                <ArticleCard
-                    key={post.slug}
-                    title={post.title}
-                    description={post.description}
-                    imageUrl={post.coverImage}
-                    articleUrl={"/blog/" + post.slug}
-                    textOnleft={index % 2 === 0 ? true : false}
-                />
+                <div key={post.slug} className=' '>
+                    <ArticleCard
+                        key={post.slug}
+                        title={post.title}
+                        description={post.description}
+                        imageUrl={post.coverImage}
+                        articleUrl={"/blog/" + post.slug}
+                        textOnleft={index % 1 === 0 ? true : false}
+                    />
+                </div>
             ))}
+            {/* Section with OUR PARTNERS title and logos */}
+            <div className='bg-gray-100 py-16'>
+                <div className='container mx-auto'>
+                    <h2 className='text-3xl text-center font-bold mb-16'>
+                        {t("Our Partners")}
+                    </h2>
+                    <div className='flex flex-col items-center mb-6 lg:flex-row lg:justify-center lg:space-x-24 md:flex-row md:justify-center md:space-x-16'>
+                        {/* Replace the following with your partner logos */}
+                        <Image
+                            src='/partners/logo1.png'
+                            alt='Partner 1'
+                            width={100}
+                            height={64}
+                            className='mb-4 lg:mb-0'
+                        />
+                        <Image
+                            src='/partners/logo1.png'
+                            alt='Partner 2'
+                            width={100}
+                            height={64}
+                            className='mb-4 lg:mb-0'
+                        />
+                        <Image
+                            src='/partners/logo1.png'
+                            alt='Partner 3'
+                            width={100}
+                            height={64}
+                            className='mb-4 lg:mb-0'
+                        />
+                        <Image
+                            src='/partners/logo1.png'
+                            alt='Partner 4'
+                            width={100}
+                            height={64}
+                            className='mb-4 lg:mb-0'
+                        />
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

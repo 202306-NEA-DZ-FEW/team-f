@@ -16,7 +16,7 @@ const ArticleCard = ({
     textOnleft = false,
 }) => {
     return (
-        <div className='my-8 h-fit brd  flex flex-col w-full  px-8 py-5 gap-4 md:flex-row md:gap-10 md:my-16  md:items-center  lg:w-[90%] mx-auto'>
+        <div className='my-8 h-fit flex flex-col w-full  px-8 py-5 gap-4 md:flex-row md:gap-10 md:my-16  md:items-center  lg:w-[90%] mx-auto'>
             <div className='w-full md:w-1/2 h-[20rem]'>
                 <Image
                     src={imageUrl}
