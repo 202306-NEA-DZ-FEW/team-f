@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-
+import Link from "next/link";
 import Button from "@/components/button/Button";
 
 import { useAuth } from "@/context/AuthContext";
@@ -79,12 +79,12 @@ export default function LoginForm() {
                     <a className='underline' href='/sign-up'>
                         Sign up
                     </a>
-                    <a
+                    <Link
                         className='block text-centertext-sm mt-2 underline'
                         href='/reset-password'
                     >
                         Forgot Password?
-                    </a>
+                    </Link>
                 </div>
                 {/* <div className='my-4 text-center'>
                     <p className='font-bold'>Log in with:</p>

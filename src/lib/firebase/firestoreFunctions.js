@@ -1,9 +1,12 @@
 import {
     addDoc,
     collection,
+    deleteDoc,
     doc,
     getDoc,
     getDocs,
+    limit,
+    orderBy,
     query,
     updateDoc,
     where,
@@ -67,7 +70,9 @@ export const getItemsByUser = async (userId) => {
     const querySnapshot = await getDocs(q);
     const items = [];
     querySnapshot.forEach((doc) => {
-        items.push(doc.data());
+        let data = doc.data();
+        data.id = doc.id;
+        items.push(data);
     });
     return items;
 };
@@ -77,6 +82,25 @@ export const getItemByCategory = async (category) => {
         collection(db, "items"),
         where("categories", "==", category),
     );
+    const querySnapshot = await getDocs(q);
+    const items = [];
+    querySnapshot.forEach((doc) => {
+        let data = doc.data();
+        data.id = doc.id;
+        items.push(data);
+    });
+    return items;
+};
+
+// DELETE DOC
+
+export const deleteDocData = async (collection, docId) => {
+    return await deleteDoc(doc(db, collection, docId));
+};
+
+// GET ALL
+export const getAllItems = async () => {
+    const q = query(collection(db, "items"), orderBy("createdAt"), limit(15));
     const querySnapshot = await getDocs(q);
     const items = [];
     querySnapshot.forEach((doc) => {

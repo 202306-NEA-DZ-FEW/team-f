@@ -13,7 +13,6 @@ const FileInput = ({ files, setFiles, register, errors, clearErrors }) => {
         setFiles(Array.from(e.target.files));
         setInput(true);
     };
-
     return (
         <div
             className={clsx(
@@ -23,7 +22,9 @@ const FileInput = ({ files, setFiles, register, errors, clearErrors }) => {
         >
             <input
                 {...register("image", {
-                    required: "Add at least one image to continue",
+                    required: files
+                        ? false
+                        : "Add at least one image to continue",
                 })}
                 type='file'
                 className='w-full h-full absolute top-0 left-0 brd opacity-0 cursor-pointer'
@@ -31,13 +32,20 @@ const FileInput = ({ files, setFiles, register, errors, clearErrors }) => {
                 accept='image/*'
                 multiple
             />
-            {input ? (
+            {input || files ? (
                 <div className='flex flex-wrap w-full h-full  gap-4 p-8'>
                     {files &&
                         files.map((file) => (
                             <InputImage
-                                key={file.name}
-                                imgSrc={URL.createObjectURL(file)}
+                                key={
+                                    typeof file === "string" ? file : file.name
+                                }
+                                imgSrc={
+                                    typeof file === "string" && !input
+                                        ? file
+                                        : URL.createObjectURL(file)
+                                }
+                                showImage={true}
                             />
                         ))}
                 </div>

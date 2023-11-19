@@ -1,15 +1,21 @@
-const CategoryCard = ({ category }) => {
+import Link from "next/link";
+
+const CategoryCard = ({ imgSrc, title, href }) => {
     return (
-        <div className='max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden'>
-            <img
-                className='h-48 w-full object-cover'
-                src={category.image}
-                alt={category.name}
-            />
-            <div className='px-6 py-4'>
-                <div className='font-bold text-xl mb-2'>{category.name}</div>
+        <Link href={href}>
+            <div className='h-fit w-36 group'>
+                <div className='w-36 h-36 border border-slate-300 rounded-lg bg-slate-100 shadow-lg '>
+                    <img
+                        className='rounded-lg object-cover w-full h-full'
+                        src={imgSrc}
+                        alt={title}
+                    />
+                </div>
+                <p className='text-black text-lg text-center mt-4 font-medium group-hover:text-green'>
+                    {title}
+                </p>
             </div>
-        </div>
+        </Link>
     );
 };
 
