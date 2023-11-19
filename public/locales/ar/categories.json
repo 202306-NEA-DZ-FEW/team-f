@@ -1,0 +1,21 @@
+{
+  "clothing": "الملابس",
+  "furniture": "الأثاث",
+  "dailyEssentials": "الاحتياجات اليومية",
+  "electronics": "الإلكترونيات",
+  "booksAndMedia": "الكتب ووسائط الإعلام",
+  "homeAppliances": "الأجهزة المنزلية",
+  "sportsEquipment": "أدوات رياضية",
+  "toysAndGames": "الألعاب واللعب",
+  "kitchenware": "أدوات المطبخ",
+  "babyItems": "مستلزمات الطفل",
+  "toolsAndHardware": "الأدوات والمعدات",
+  "personalCare": "مستلزمات العناية الشخصية",
+  "schoolSupplies": "لوازم المدرسة",
+  "artAndCraft": "لوازم الفن والحرف",
+  "foodItems": "مواد غذائية",
+  "petSupplies": "لوازم الحيوانات الأليفة",
+  "healthcare": "منتجات الرعاية الصحية",
+  "gardeningTools": "أدوات الحدائق",
+  "musicalInstruments": "الآلات الموسيقية"
+}

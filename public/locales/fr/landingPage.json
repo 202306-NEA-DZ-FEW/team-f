@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "subtitle": "Unir les cœurs, partager les espoirs et créer une communauté qui se soucie.",
+    "description": "Dans un monde où l'excès rencontre la pénurie, unissons-nous pour partager l'abondance et construire une communauté plus compatissante. Notre plateforme vous permet de partager vos ressources supplémentaires, que ce soit des vêtements, des meubles ou des essentiels quotidiens, et de bénéficier de la chaleur des objets partagés par les autres. Ainsi, vous donnez non seulement plus de sens à votre vie, mais vous apportez également des impacts positifs aux personnes autour de vous."
+  },
+  "causes": {
+    "title": "Causes",
+    "Solidarity": {
+      "title": "Solidarité",
+      "description": "Nous visons à encourager un sentiment d'unité et de solidarité au sein de la communauté locale, incitant les gens à se soutenir mutuellement en temps de besoin."
+    },
+    "Sustainability": {
+      "title": "Durabilité",
+      "description": "Promouvoir des pratiques respectueuses de l'environnement en prolongeant la durée de vie des objets, en réduisant les déchets et en encourageant une approche plus durable de la consommation."
+    },
+    "Empathy": {
+      "title": "Empathie",
+      "description": "Let's Share cultive une culture d'empathie et de compassion, où les individus partagent en comprenant que leurs actions ont un impact positif sur la vie des autres."
+    }
+  },
+  "statistics": {
+    "shared_resources": {
+      "title": "30 000",
+      "description": "Dans un esprit d'harmonie communautaire, notre communauté algérienne a partagé inspiré 30 000 ressources au cours de la dernière année, y compris des vêtements, des meubles et des articles essentiels, favorisant un sentiment d'unité et de soutien."
+    },
+    "empowered_donors": {
+      "title": "800",
+      "description": "Notre plateforme a permis à 800 généreux donateurs algériens de tendre la main, non seulement en partageant des articles, mais aussi en répandant la compassion, créant des impacts positifs au sein de nos communautés locales."
+    },
+    "food_distribution": {
+      "title": "50 000 repas",
+      "description": "Répondant au besoin urgent de subsistance, notre communauté algérienne a collaboré pour fournir 50 000 repas à ceux qui font face à l'insécurité alimentaire, veillant à ce que personne dans notre nation ne manque d'un repas approprié."
+    },
+    "fact": {
+      "title": "Fact",
+      "description": "Grâce aux efforts collectifs, notre communauté algérienne a atteint une réduction de 15 % de l'impact environnemental, démontrant les effets environnementaux positifs du partage et de la durabilité."
+    }
+  },
+  "items": "Articles populaires",
+  "blogs": "Blogs",
+  "partners": "Nos partenaires"
+}

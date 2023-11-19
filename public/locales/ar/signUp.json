@@ -1,0 +1,26 @@
+{
+  "signUp": "تسجيل الدخول",
+  "nameLabel": "الاسم",
+  "namePlaceholder": "أدخل اسمك الكامل",
+  "nameRequired": "الاسم مطلوب",
+  "emailLabel": "البريد الإلكتروني",
+  "emailPlaceholder": "أدخل بريدك الإلكتروني",
+  "emailRequired": "البريد الإلكتروني مطلوب",
+  "emailValid": "عنوان البريد الإلكتروني غير صالح",
+  "passwordLabel": "كلمة المرور",
+  "PasswordPlaceholder": "أدخل كلمة المرور الخاصة بك",
+  "passwordRequired": "كلمة المرور مطلوبة",
+  "passwordLength": "يجب أن تكون كلمة المرور 8 أحرف أو أكثر",
+  "confirmPasswordLabel": "تأكيد كلمة المرور",
+  "confirmPasswordPlaceholder": "أعد إدخال كلمة المرور الخاصة بك",
+  "confirmPasswordRequired": "مطلوب تأكيد كلمة المرور ",
+  "confirmPasswordMatch": "كلمة المرور غير متطابقة، يرجى المحاولة مرة أخرى",
+  "phoneLabel": "الهاتف",
+  "phonePlaceholder": "أدخل رقم هاتفك",
+  "phoneRequired": "رقم الهاتف مطلوب",
+  "locationLabel": "الولاية",
+  "locationRequired": "الموقع مطلوب",
+  "signUpButton": "أنشئ حساباً",
+  "signUpMethod": "التسجيل باستخدام"
+}
+

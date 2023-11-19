@@ -1,0 +1,21 @@
+{
+  "clothing": "Clothing",
+  "furniture": "Furniture",
+  "dailyEssentials": "Daily Essentials",
+  "electronics": "Electronics",
+  "booksAndMedia": "Books and Media",
+  "homeAppliances": "Home Appliances",
+  "sportsEquipment": "Sports Equipment",
+  "toysAndGames": "Toys",
+  "kitchenware": "Kitchenware",
+  "babyItems": "Baby Items",
+  "toolsAndHardware": "Tools and Hardware",
+  "personalCare": "Personal Care",
+  "schoolSupplies": "School Supplies",
+  "artAndCraft": "Art and Craft Supplies",
+  "foodItems": "Food Items",
+  "petSupplies": "Pet Supplies",
+  "healthcare": "Healthcare Products",
+  "gardeningTools": "Gardening Tools",
+  "musicalInstruments": "Musical Instruments"
+}

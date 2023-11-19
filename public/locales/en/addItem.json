@@ -1,0 +1,17 @@
+{
+  "addItem": "Add Item",
+  "title": "Title",
+  "titlePlaceholder": "Title...",
+  "categoryLabel": "Category",
+  "categoryPlaceholder": "Select category",
+  "locationLabel": "Location",
+  "locationPlaceholder": "Select location",
+  "descriptionLabel": "Description",
+  "descriptionLength": "Description must be longer",
+  "descriptionRequired": "Description is required",
+  "descriptionPlaceHolder": "Paragraph",
+  "imageLabel": "Upload photos",
+  "imageRequired": "You need to provide a photo",
+  "confirmButton": "Confirm",
+  "cancelButton": "Cancel"
+}

@@ -1,0 +1,21 @@
+{
+  "clothing": "Vêtements",
+  "furniture": "Mobilier",
+  "dailyEssentials": "Articles de première nécessité",
+  "electronics": "Électronique",
+  "booksAndMedia": "Livres et médias",
+  "homeAppliances": "Électroménagers",
+  "sportsEquipment": "Équipement de sport",
+  "toysAndGames": "Jouets",
+  "kitchenware": "Articles de cuisine",
+  "babyItems": "Articles pour bébé",
+  "toolsAndHardware": "Outils et quincaillerie",
+  "personalCare": "Produits de soins personnels",
+  "schoolSupplies": "Fournitures scolaires",
+  "artAndCraft": "Fournitures d'art et d'artisanat",
+  "foodItems": "Produits alimentaires",
+  "petSupplies": "Fournitures pour animaux de compagnie",
+  "healthcare": "Produits de soins de santé",
+  "gardeningTools": "Outils de jardinage",
+  "musicalInstruments": "Instruments de musique"
+}

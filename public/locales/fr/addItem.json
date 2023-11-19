@@ -1,0 +1,17 @@
+{
+  "addItem": "Ajouter un article",
+  "title": "Titre",
+  "titlePlaceholder": "Titre...",
+  "categoryLabel": "Catégorie",
+  "categoryPlaceholder": "Sélectionnez une catégorie",
+  "locationLabel": "Localisation",
+  "locationPlaceholder": "Sélectionnez une Localisation",
+  "descriptionLabel": "Description",
+  "descriptionLength": "La description doit être plus longue",
+  "descriptionRequired": "La description est requise",
+  "descriptionPlaceHolder": "Paragraphe",
+  "imageLabel": "Télécharger des photos",
+  "imageRequired": "Vous devez fournir une photo",
+  "confirmButton": "Confirmer",
+  "cancelButton": "Annuler"
+}

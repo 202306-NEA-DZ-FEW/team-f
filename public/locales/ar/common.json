@@ -1,3 +1,28 @@
 {
-    "test": "مرحبا"
-}
+    "navbar": {
+      "logo": "Let's Share",
+      "home": "الرئيسية",
+      "about": "من نحن",
+      "products": "المنتجات",
+      "blogs": "المدونات"
+    },
+    "buttons": {
+      "logIn": "تسجيل الدخول",
+      "signUp": "التسجيل",
+      "logOut": "تسجيل الخروج",
+      "donate": "تبرع الآن",
+      "readMore": "معرفةالمزيد",
+      "confirm": "تأكيد",
+      "cancel": "إلغاء",
+      "addItem": "إضافة عنصر"
+    },
+    "footer": {
+      "about": "من نحن",
+      "blogs": "المدونات",
+      "listedItems": "العناصر المدرجة",
+      "contactUs": "اتصل بنا",
+      "address": "العنوان",
+      "street": "شارع 01،17",
+      "city": "المدينة، البلد"
+    }
+  }
