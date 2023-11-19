@@ -1,4 +1,7 @@
 import clsx from "clsx";
+
+import { cn } from "@/lib/utils";
+
 const Input = ({
     name,
     type,
@@ -8,6 +11,7 @@ const Input = ({
     requiredMessage,
     validation,
     errors,
+    className = "",
 }) => {
     return (
         <>
@@ -24,12 +28,13 @@ const Input = ({
                 })}
                 placeholder={placeholder}
                 type={type}
-                className={clsx(
+                className={cn(
                     "p-2 block w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-green",
                     {
                         "border-red": errors[name],
                         "border-slate-300": !errors[name],
                     },
+                    className,
                 )}
             />
             {errors[name] && (

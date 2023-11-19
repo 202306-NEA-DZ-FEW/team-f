@@ -5,6 +5,8 @@ import {
     doc,
     getDoc,
     getDocs,
+    limit,
+    orderBy,
     query,
     updateDoc,
     where,
@@ -94,4 +96,17 @@ export const getItemByCategory = async (category) => {
 
 export const deleteDocData = async (collection, docId) => {
     return await deleteDoc(doc(db, collection, docId));
+};
+
+// GET ALL
+export const getAllItems = async () => {
+    const q = query(collection(db, "items"), orderBy("createdAt"), limit(15));
+    const querySnapshot = await getDocs(q);
+    const items = [];
+    querySnapshot.forEach((doc) => {
+        let data = doc.data();
+        data.id = doc.id;
+        items.push(data);
+    });
+    return items;
 };
