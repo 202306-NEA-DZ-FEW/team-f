@@ -5,7 +5,7 @@ const ItemCard = ({ item }) => {
     const { id, title, description, location, imagesList } = item;
     return (
         <Link href={`/item/${id}`} className='cursor-pointer'>
-            <div className='flex flex-col border border-gray my-4 w-full md:w-[18rem]  h-fit shadow-lg rounded-xl p-1'>
+            <div className='flex flex-col m-2 border border-gray my-4 w-full md:w-[18rem]  h-fit shadow-lg rounded-xl p-1'>
                 <div className='w-full h-[13rem] mb-4'>
                     <img
                         src={imagesList[0]}
