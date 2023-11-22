@@ -1,25 +1,32 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
-
+import { useRouter } from "next/router"; // Import useRouter
 import { getItemsByUser } from "@/lib/firebase/firestoreFunctions";
-
 import DeleteWarning from "@/components/delete-warning";
 import ItemCard from "@/components/itemcard/ItemCard";
 import Profile from "@/components/profile/Profile";
-
 import { useAuth } from "@/context/AuthContext";
 
 export default function MyAccount() {
     const { currentUser } = useAuth();
     const [items, setItems] = useState([]);
     const [deleteWarningItem, setDeleteWarningItem] = useState();
+    const router = useRouter(); // Initialize useRouter
 
     useEffect(() => {
+        // Check if the user is not logged in and redirect to 404 page
+        if (!currentUser) {
+            router.push("/");
+            return; // Stop further execution of the useEffect
+        }
+
+        // Fetch items only if the user is logged in
         getItemsByUser(currentUser.uid).then((data) => {
             setItems(data);
         });
-    }, [currentUser]);
+    }, [currentUser, router]);
+
     return (
         <>
             {deleteWarningItem && (
