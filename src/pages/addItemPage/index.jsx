@@ -3,8 +3,15 @@ import React, { useState, useRef } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
 
 export default function Index() {
+    const [title, setTitle] = useState("");
+    const [category, setCategory] = useState("");
+    const [state, setState] = useState("");
+    const [city, setCity] = useState("");
+    const [price, setPrice] = useState();
+    const [description, setDescription] = useState("");
     const [selectedPhotos, setSelectedPhotos] = useState([]);
     const [deleteIndices, setDeleteIndices] = useState([]);
+
     const fileInputRef = useRef(null);
 
     const handleFileChange = (e) => {
