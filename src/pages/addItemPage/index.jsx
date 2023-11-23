@@ -129,18 +129,29 @@ export default function Index() {
                         </select>
                     </div>
                     <div className='flex flex-col'>
-                        <label
-                            htmlFor='description'
-                            className='text-sm font-medium'
-                        >
+                        <label htmlFor='city' className='text-sm font-medium'>
                             City
                         </label>
                         <textarea
-                            id='description'
+                            id='city'
                             className='border-current p-2 rounded-md shadow-md text-gray-400 h-10'
                             minLength={3}
                             maxLength={15}
-                            placeholder='Description'
+                            placeholder='city'
+                        />
+                    </div>
+
+                    <div className='flex flex-col'>
+                        <label htmlFor='price' className='text-sm font-medium'>
+                            Price
+                        </label>
+                        <input
+                            id='price'
+                            className='border-current p-2 rounded-md shadow-md text-gray-400 h-10'
+                            minLength={3}
+                            maxLength={15}
+                            placeholder='DA'
+                            type='number'
                         />
                     </div>
 
