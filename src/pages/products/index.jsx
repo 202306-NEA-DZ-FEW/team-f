@@ -76,7 +76,7 @@ export default function ProductsPage({ items, queryParams }) {
                         }}
                     /> */}
                     <Input
-                        className='w-1/5'
+                        className='w-1/5 rounded-xl'
                         name='location'
                         type='text'
                         labelText=''
@@ -91,8 +91,12 @@ export default function ProductsPage({ items, queryParams }) {
                             },
                         }}
                     />
-                    <Button size='lg' type='submit'>
+                    <Button size='lg' type='submit' className='bg-lime-600'>
                         Search
+                    </Button>
+                    <Button className='border-lime-600 border-2 text-lime-600 bg-transparent'>
+                        {" "}
+                        Add item
                     </Button>
                 </div>
             </form>

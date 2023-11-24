@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
 
 export default function Index() {

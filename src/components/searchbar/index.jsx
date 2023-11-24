@@ -31,7 +31,6 @@ function SearchBar({ queryParams }) {
     }, [query, queryParams, router]);
 
     useEffect(() => {
-        // Update the text input when queryParams change
         setText(queryParams.search || "");
     }, [queryParams.search]);
 
