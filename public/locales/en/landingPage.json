@@ -1,0 +1,42 @@
+{
+    "hero": {
+        "subtitle": "Bridging hearts, sharing hopes, and creating a community that cares.",
+        "description": "In a world where excess meets scarcity, let's come together to share the abundance and build a more compassionate community. Our platform empowers you to both share your extra resources - be it clothes, furniture, or daily essentials - and benefit from the warmth of shared items from others. This way, you not only make your life more meaningful but also bring positive impacts to the people around you."
+    },
+    "causes": {
+        "title": "Causes",
+        "Solidarity": {
+            "title": "Solidarity",
+            "description": "We aim to foster a sense of unity and solidarity within the local community, encouraging people to support each other in times of need."
+        },
+        "Sustainability": {
+            "title": "Sustainability",
+            "description": "Promoting eco-friendly practices by extending the lifespan of items, reducing waste, and encouraging a more sustainable approach to consumption."
+        },
+        "Empathy": {
+            "title": "Empathy",
+            "description": "Let's Share Cultivates a culture of empathy and compassion, where individuals share with the understanding that their actions positively impact the lives of others."
+        }
+    },
+    "statistics": {
+        "shared_resources": {
+            "title": "30,000",
+            "description": "In the spirit of communal harmony, our Algerian community shared an inspiring 30,000 resources over the past year, including clothing, furniture, and essential items, fostering a sense of unity and support."
+        },
+        "empowered_donors": {
+            "title": "800",
+            "description": "Our platform empowered 800 generous Algerian donors to extend a helping hand, not only by sharing items but also by spreading compassion, creating positive impacts within our local communities."
+        },
+        "food_distribution": {
+            "title": "50,000 meals",
+            "description": "Addressing the urgent need for sustenance, our Algerian community collaborated to provide 50,000 meals to those facing food insecurity, ensuring that no one in our nation goes without a proper meal."
+        },
+        "fact": {
+            "title": "Fact",
+            "description": "Through collective efforts, our Algerian community achieved a 15% reduction in environmental impact, showcasing the positive environmental effects of sharing and sustainability."
+        }
+    },
+    "items": "Popular items",
+    "blogs": "Blogs",
+    "partners": "Our Partners"
+}

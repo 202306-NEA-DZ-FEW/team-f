@@ -30,21 +30,22 @@ function Navbar() {
     };
     return (
         <div className='w-full'>
-            <div className='relative  px-4  w-full bg-white'>
-                <div className='w-full'>
+            <div className='relative  px-4  w-full bg-[#eeeedc] rounded-3xl'>
+                <div className='w-full opacity-80'>
                     <div className='flex items-center justify-between py-6  md:justify-start md:space-x-10 '>
                         <div className='flex justify-start lg:w-0 lg:flex-1'>
                             <Link href='/'>
                                 <div className='flex items-center'>
                                     <Image
-                                        className='w-auto h-8 sm:h-10'
-                                        src='/logo.svg'
+                                        className='w-auto h-14 sm:h-10'
+                                        src='./logo/hands.svg'
                                         alt='Logo'
-                                        width={200}
+                                        width={300}
                                         height={200}
                                     />
-                                    <span className='ml-2 text-2xl font-medium text-red'>
-                                        Lets Share
+                                    <span className='ml-2 text-2xl font-medium text-lime-700 text-ellipsis'>
+                                        <span className='text-3xl'>S</span>
+                                        hareity
                                     </span>
                                 </div>
                             </Link>
@@ -52,7 +53,7 @@ function Navbar() {
                         <div className='-my-2 -mr-2 md:hidden'>
                             <button
                                 onClick={toggleMenu}
-                                className='inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md   focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green'
+                                className='inline-flex items-center justify-center p-2 text-gray-400 bg-[#eeeedc] rounded-md   focus:outline-none focus:ring-2 focus:ring-inset focus:ring-lime-700'
                             >
                                 <span className='sr-only'>Open menu</span>
                                 <AiOutlineMenu className='text-3xl text-black' />
@@ -63,7 +64,7 @@ function Navbar() {
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className='text-base font-medium text-black hover:text-red'
+                                    className='text-base font-medium text-black hover:text-lime-600'
                                 >
                                     {item.name}
                                 </Link>
@@ -73,10 +74,10 @@ function Navbar() {
                             <AccountMenu logout={logout} />
                         ) : (
                             <div className='items-center justify-end hidden md:flex md:flex-1 lg:w-0'>
-                                <button className='text-base font-medium text-blck whitespace-nowrap hover:text-green'>
+                                <button className='text-base font-medium text-blck whitespace-nowrap hover:text-lime-700'>
                                     Sign in
                                 </button>
-                                <button className='inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white bg-green border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-75'>
+                                <button className='inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white bg-lime-600 border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-75'>
                                     Sign up
                                 </button>
                             </div>
@@ -105,19 +106,19 @@ const NavbarMobile = ({ openMenu, toggleMenu }) => {
                         <div className='flex items-center'>
                             <Image
                                 className='w-auto h-8 sm:h-10'
-                                src='/logo.svg'
-                                alt=''
-                                width={200}
+                                src='./logo/hands.svg'
+                                alt='logo'
+                                width={300}
                                 height={200}
                             />
-                            <span className='ml-2 text-2xl font-medium text-red'>
-                                Lets Share
+                            <span className='ml-2 text-2xl font-medium text-lime-700'>
+                                <span className='text-3xl'>S</span>hareity
                             </span>
                         </div>
                         <div className='-mr-2'>
                             <button
                                 onClick={toggleMenu}
-                                className='inline-flex items-center justify-center p-2  bg-white rounded-md  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red'
+                                className='inline-flex items-center justify-center p-2  bg-white rounded-md  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-lime-700'
                             >
                                 <span className='sr-only'>Close menu</span>
                                 <AiOutlineClose className='text-2xl' />
@@ -132,7 +133,7 @@ const NavbarMobile = ({ openMenu, toggleMenu }) => {
                                     href={item.href}
                                     className='flex items-center p-3 -m-3 rounded-md hover:bg-gray-50'
                                 >
-                                    <item.icon className='text-2xl text-green ' />
+                                    <item.icon className='text-2xl text-lime-700 ' />
                                     <span className='ml-3 text-lg font-medium text-black'>
                                         {item.name}
                                     </span>
@@ -147,7 +148,7 @@ const NavbarMobile = ({ openMenu, toggleMenu }) => {
                         <>
                             <Link
                                 href='/account'
-                                className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-green border border-transparent rounded-md shadow-sm '
+                                className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-lime-700 border border-transparent rounded-md shadow-sm '
                             >
                                 Your profile
                             </Link>
@@ -162,13 +163,13 @@ const NavbarMobile = ({ openMenu, toggleMenu }) => {
                         <>
                             <Link
                                 href='/register'
-                                className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-green border border-transparent rounded-md shadow-sm '
+                                className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-white bg-lime-700 border border-transparent rounded-md shadow-sm '
                             >
                                 Sign up
                             </Link>
                             <p className='mt-6 text-base font-medium text-center text-gray-500'>
                                 You have an account?
-                                <Link href='/login' className='text-green '>
+                                <Link href='/login' className='text-lime-700 '>
                                     Sign in
                                 </Link>
                             </p>

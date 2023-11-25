@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const SecondHeroSection = ({ children }) => {
     return (
-        <section class='bg-white py-16 mt-16'>
+        <section class='bg-white py-9 mt-4'>
             <div class='container max-w-screen-xl mx-auto px-4'>
                 <div class='flex flex-col lg:flex-row justify-between space-x-16 items-center '>
                     <div class='flex justify-center  lg:w-1/2'>
@@ -14,9 +14,9 @@ const SecondHeroSection = ({ children }) => {
                     </div>
 
                     <div class='lg:w-1/2'>
-                        <h1 class='font-semibold text-gray-900 text-xl md:text-4xl mb-20'>
-                            You can help lots of people by <br />
-                            donating
+                        <h1 class='font-bold text-lime-900 font-poppins text-xl md:text-4xl mb-20'>
+                            You can help many people by <br />
+                            Donating
                         </h1>
 
                         <div class='grid grid-cols-1 md:grid-cols-2 md:space-x-20 mb-16'>

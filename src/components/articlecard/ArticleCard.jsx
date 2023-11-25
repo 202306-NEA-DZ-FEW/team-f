@@ -30,9 +30,13 @@ const ArticleCard = ({
                 className={`${textOnleft ? "md:order-first" : ""}
                 flex flex-col gap-6 text-center items-center md:text-left md:items-start md:w-1/2 `}
             >
-                <h1 className='text-2xl text-black font-semibold'>{title}</h1>
+                <h1 className='text-3xl text-lime-700 font-semibold'>
+                    {title}
+                </h1>
                 <p className='text-black md:w-6/7'>{description}</p>
-                <Button href={articleUrl}>Read more</Button>
+                <Button className='bg-lime-600' href={articleUrl}>
+                    Read more
+                </Button>
             </div>
         </div>
     );

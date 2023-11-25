@@ -32,21 +32,24 @@ const HomePage = ({ allPosts, items }) => {
                 </Link>
                 
             </div> */}
+
             <HeroSection />
             <ValueSection />
             <BrowseSection />
-            <div className='my-28'>
-                <h2 className='text-3xl font-semibold mb-10'>
-                    Browse by category:{" "}
+            <div className='my-14'>
+                <h2 className='text-3xl text-lime-600 font-poppins mb-10'>
+                    <b>Browse by category: </b>
                 </h2>
-                <div className='flex justify-between'>
+                <div className='flex flex-wrap justify-between'>
                     {categories.map((category) => {
                         return <CategoryCard key={category.id} {...category} />;
                     })}
                 </div>
             </div>
-            <h2 className='text-3xl font-semibold mb-10'>Top items: </h2>
-            <div className='flex flex-wrap justify-between w-full mt-5'>
+            <h2 className='text-3xl text-lime-600 font-poppins'>
+                <b>Top items:</b>{" "}
+            </h2>
+            <div className='flex flex-wrap justify-between w-full'>
                 {items.map((item) => (
                     <ItemCard key={item.id} item={item} />
                 ))}
@@ -55,7 +58,7 @@ const HomePage = ({ allPosts, items }) => {
             <SecondHeroSection />
             <CompaniesSection />
 
-            <h2 className='text-6xl font-semibold mb-10 text-black text-center'>
+            <h2 className='text-6xl font-semibold mb-10 text-lime-800 text-center'>
                 Blog
             </h2>
             {allPosts.map((post, index) => (

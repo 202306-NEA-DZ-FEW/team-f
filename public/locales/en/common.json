@@ -1,3 +1,28 @@
 {
-    "test": "Hello"
+    "navbar": {
+        "logo": "Let's Share",
+        "home": "Home",
+        "about": "About us",
+        "products": "Products",
+        "blogs": "Blogs"
+    },
+    "buttons": {
+        "logIn": "Log in",
+        "signUp": "Sign up",
+        "logOut": "Log out",
+        "donate": "Donate now",
+        "readMore": "Read more",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "addItem": "Add item"
+    },
+    "footer": {
+        "about": "About us",
+        "blogs": "Blogs",
+        "listedItems": "Listed items",
+        "contactUs": "Contact us",
+        "address": "Address",
+        "street": "Street 01,17",
+        "city": "City, Country"
+    }
 }

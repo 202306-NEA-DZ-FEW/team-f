@@ -11,7 +11,7 @@ const AccountMenu = ({ logout }) => {
         <div className='relative items-center justify-end hidden md:flex '>
             <button
                 onClick={() => setOpenMenu(!openMenu)}
-                className='text-base font-medium text-black whitespace-nowrap hover:text-green'
+                className='text-base font-medium text-black whitespace-nowrap hover:text-lime-700'
             >
                 <Image
                     src='/images/account.svg'
@@ -28,7 +28,7 @@ const AccountMenu = ({ logout }) => {
                 <div className='flex flex-col gap-4'>
                     <Link
                         href='/account'
-                        className='   text-black whitespace-nowrap hover:text-green'
+                        className='   text-black whitespace-nowrap hover:text-lime-700'
                     >
                         <div className='flex flex-row items-center gap-3'>
                             <MdAccountCircle className='text-3xl ' />
@@ -39,7 +39,7 @@ const AccountMenu = ({ logout }) => {
                     </Link>
                     <button
                         onClick={logout}
-                        className='text-red whitespace-nowrap hover:opacity-75'
+                        className='text-lime-700 whitespace-nowrap hover:opacity-75'
                     >
                         <div className='flex flex-row items-center gap-4 '>
                             <BiLogOut className='text-3xl  -ml-1' />

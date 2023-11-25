@@ -8,15 +8,15 @@ import {
 
 const Footer = () => {
     return (
-        <footer className='bg-green text-white p-8'>
+        <footer className='bg-lime-800 text-[#BAC738] p-8 opacity-95'>
             <div className='mx-auto flex flex-col items-center sm:flex-col lg:flex-row'>
                 {/* Logo */}
-                <div className='mx-2 mb-4 '>
+                <div className='mx-2 mb-4'>
                     <Image
-                        src='/Logo/logo.png'
+                        src='./logo/hands.svg'
                         alt='Logo'
-                        width={80}
-                        height={80}
+                        width={40}
+                        height={40}
                     />
                 </div>
                 {/* Columns */}
@@ -25,19 +25,19 @@ const Footer = () => {
                     <div className='flex flex-col items-center sm:mx-2 sm:mb-4'>
                         <a
                             href='#'
-                            className='text-white hover:text-black mb-1'
+                            className='text-[#BAC738] hover:text-lime-950 mb-1'
                         >
                             About us
                         </a>
                         <a
                             href='#'
-                            className='text-white hover:text-black mb-1'
+                            className='text-[#BAC738] hover:text-lime-950 mb-1'
                         >
                             Blogs
                         </a>
                         <a
                             href='#'
-                            className='text-white hover:text-black mb-1'
+                            className='text-[#BAC738] hover:text-lime-950 mb-1'
                         >
                             Listed items
                         </a>
@@ -47,16 +47,28 @@ const Footer = () => {
                     <div className='flex flex-col items-center sm:mx-4 sm:mb-4'>
                         <h2>Contact us</h2>
                         <div className='flex items-center space-x-2 p-2'>
-                            <a href='#' className='text-white hover:text-black'>
+                            <a
+                                href='#'
+                                className='text-lime-950 hover:text-[#BAC738]'
+                            >
                                 <BiLogoFacebookSquare className='w-6 h-6' />
                             </a>
-                            <a href='#' className='text-white hover:text-black'>
+                            <a
+                                href='#'
+                                className='text-lime-950 hover:text-[#BAC738]'
+                            >
                                 <BiLogoInstagram className='w-6 h-6' />
                             </a>
-                            <a href='#' className='text-white hover:text-black'>
+                            <a
+                                href='#'
+                                className='text-lime-950 hover:text-[#BAC738]'
+                            >
                                 <BiLogoLinkedinSquare className='w-6 h-6' />
                             </a>
-                            <a href='#' className='text-white hover:text-black'>
+                            <a
+                                href='#'
+                                className='text-lime-950 hover:text-[#BAC738]'
+                            >
                                 <BiSolidShareAlt className='w-6 h-6' />
                             </a>
                         </div>
