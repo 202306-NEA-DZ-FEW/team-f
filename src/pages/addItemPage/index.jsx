@@ -1,11 +1,17 @@
+import Button from "@/components/button/Button";
 import React, { useState, useRef } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
 
 export default function Index() {
-    const clothes = "whatever";
-    const place = "whatever";
+    const [title, setTitle] = useState("");
+    const [category, setCategory] = useState("");
+    const [state, setState] = useState("");
+    const [city, setCity] = useState("");
+    const [price, setPrice] = useState();
+    const [description, setDescription] = useState("");
     const [selectedPhotos, setSelectedPhotos] = useState([]);
     const [deleteIndices, setDeleteIndices] = useState([]);
+
     const fileInputRef = useRef(null);
 
     const handleFileChange = (e) => {
@@ -55,41 +61,105 @@ export default function Index() {
                             htmlFor='category'
                             className='text-sm font-medium'
                         >
-                            Category <BiSolidDownArrow />
+                            Category
                         </label>
                         <select
                             id='category'
                             className='border-current p-2 rounded-md shadow-md text-gray-400'
                         >
-                            <option>{clothes}</option>
-                            <option>{clothes}</option>
-                            <option>{clothes}</option>
-                            <option>{clothes}</option>
-                            <option>{clothes}</option>
-                            <option>{clothes}</option>
-                            <option>{clothes}</option>
+                            <option>Electronics</option>
+                            <option>Academic</option>
+                            <option>clothes</option>
+                            <option>Dorm</option>
+                            <option>Entertainment</option>
+                            <option>Beauty</option>
+                            <option>Other</option>
                         </select>
                     </div>
 
                     <div className='flex flex-col'>
-                        <label
-                            htmlFor='location'
-                            className='text-sm font-medium'
-                        >
-                            Location
+                        <label htmlFor='State' className='text-sm font-medium'>
+                            State
                         </label>
                         <select
-                            id='location'
+                            id='State'
                             className='border-current p-2 rounded-md shadow-md text-gray-400'
                         >
-                            <option>{place}</option>
-                            <option>{place}</option>
-                            <option>{place}</option>
-                            <option>{place}</option>
-                            <option>{place}</option>
-                            <option>{place}</option>
-                            <option>{place}</option>
+                            <option value='0001'>ADRAR</option>
+                            <option value='0046'>AIN TEMOUCHENT</option>
+                            <option value='0044'>AIN-DEFLA</option>
+                            <option value='0016'>ALGER</option>
+                            <option value='0023'>ANNABA</option>
+                            <option value='0034'>B.B. ARRERIDJ</option>
+                            <option value='0005'>BATNA</option>
+                            <option value='0008'>BECHAR</option>
+                            <option value='0006'>BEJAIA</option>
+                            <option value='0007'>BISKRA</option>
+                            <option value='0009'>BLIDA</option>
+                            <option value='0010'>BOUIRA</option>
+                            <option value='0035'>BOUMERDES</option>
+                            <option value='0002'>CHLEF</option>
+                            <option value='0025'>CONSTANTINE</option>
+                            <option value='0017'>DJELFA</option>
+                            <option value='0032'>EL BAYADH</option>
+                            <option value='0036'>EL TARF</option>
+                            <option value='0039'>EL-OUED</option>
+                            <option value='0047'>GHARDAIA</option>
+                            <option value='0024'>GUELMA</option>
+                            <option value='0033'>ILLIZI</option>
+                            <option value='0018'>JIJEL</option>
+                            <option value='0040'>KHENCHELA</option>
+                            <option value='0003'>LAGHOUAT</option>
+                            <option value='0029'>MASCARA</option>
+                            <option value='0026'>MEDEA</option>
+                            <option value='0043'>MILA</option>
+                            <option value='0027'>MOSTAGANEM</option>
+                            <option value='0028'>M&lsquo;SILA</option>
+                            <option value='0045'>NAAMA</option>
+                            <option value='0031'>ORAN</option>
+                            <option value='0030'>OUARGLA</option>
+                            <option value='0004'>OUM EL BOUAGHI</option>
+                            <option value='0048'>RELIZANE</option>
+                            <option value='0020'>SAIDA</option>
+                            <option value='0019'>SETIF</option>
+                            <option value='0022'>SIDI BEL-ABBES</option>
+                            <option value='0021'>SKIKDA</option>
+                            <option value='0041'>SOUK AHRAS</option>
+                            <option value='0011'>TAMANRASSET</option>
+                            <option value='0012'>TEBESSA</option>
+                            <option value='0014'>TIARET</option>
+                            <option value='0037'>TINDOUF</option>
+                            <option value='0042'>TIPAZA</option>
+                            <option value='0038'>TISSEMSILT</option>
+                            <option value='0015'>TIZI-OUZOU</option>
+                            <option value='0013'>TLEMCEN</option>
                         </select>
+                    </div>
+                    <div className='flex flex-col'>
+                        <label htmlFor='city' className='text-sm font-medium'>
+                            City
+                        </label>
+                        <textarea
+                            id='city'
+                            className='border-current p-2 rounded-md shadow-md text-gray-400 h-10'
+                            minLength={3}
+                            maxLength={15}
+                            placeholder='city'
+                        />
+                    </div>
+
+                    <div className='flex flex-col'>
+                        <label htmlFor='price' className='text-sm font-medium'>
+                            Price
+                        </label>
+                        <input
+                            id='price'
+                            className='border-current p-2 rounded-md shadow-md text-gray-400 h-10'
+                            minLength={3}
+                            maxLength={15}
+                            placeholder='DA'
+                            type='number'
+                        />
                     </div>
 
                     <div className='flex flex-col'>
@@ -107,15 +177,12 @@ export default function Index() {
                     </div>
 
                     <div className='flex flex-col'>
-                        <label className='text-sm font-medium my-5'>
-                            Upload Photos
-                        </label>
                         <label
                             htmlFor='upload-photos'
-                            className='text-sm font-semithin p-2 rounded-md shadow-md text-gray-400 h-24 cursor-pointer'
+                            className='text-lg font-semithin p-2 text-black-100 h-10 cursor-pointer'
                             onClick={handleUploadClick}
                         >
-                            Uploaded Photos
+                            Upload Photos
                         </label>
                         <input
                             type='file'
@@ -147,12 +214,9 @@ export default function Index() {
                         </div>
                     </div>
                     <div className='flex justify-end'>
-                        <button className='mr-2 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-md'>
+                        <Button className='mr-2' variant='default' size='lg'>
                             Confirm
-                        </button>
-                        <button className='px-4 py-2 bg-red-500 hover:bg-red-700 text-white font-semibold rounded-md'>
-                            Cancel
-                        </button>
+                        </Button>
                     </div>
                 </form>
             </div>
