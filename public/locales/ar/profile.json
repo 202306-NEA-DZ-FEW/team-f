@@ -1,0 +1,33 @@
+{
+    "profile": "الملف الشخصي",
+    "profileInfo": {
+        "name": "الاسم",
+        "location": "الموقع",
+        "email": "البريد الإلكتروني",
+        "phoneNumber": "رقم الهاتف",
+        "phonePlaceholder": "أدخل رقم هاتفك",
+        "locationRequired": "الموقع مطلوب",
+        "submit": "إرسال",
+        "Cancel": "إلغاء",
+        "profileInfo": "تحرير معلومات الملف الشخصي",
+        "language": "اللغة"
+    },
+    "userUpdateForm": {
+        "submit": "إرسال",
+        "cancel": "إلغاء",
+        "nameLabel": "الاسم",
+        "namePlaceholder": "أدخل اسمك الكامل",
+        "nameRequired": "الاسم مطلوب",
+        "nameLength": "يجب أن يكون الاسم أقل من 20 حرفًا",
+        "emailLabel": "البريد الإلكتروني",
+        "emailPlaceholder": "أدخل بريدك الإلكتروني",
+        "emailRequired": "البريد الإلكتروني مطلوب",
+        "emailValid": "عنوان البريد الإلكتروني غير صالح",
+        "phoneLabel": "الهاتف",
+        "phonePlaceholder": "أدخل رقم هاتفك",
+        "phoneRequired": "رقم الهاتف مطلوب",
+        "locationLabel": "الولاية",
+        "locationRequired": "الموقع مطلوب"
+    },
+    "myItems": "كل العناصر"
+}

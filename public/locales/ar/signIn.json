@@ -1,0 +1,19 @@
+{
+    "signIn": "تسجيل الدخول",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "xyz@gmail.com",
+    "passwordLabel": "كلمة المرور",
+    "PasswordPlaceholder": "أدخل كلمة المرور الخاصة بك",
+    "savedlogin": "احفظ تسجيل دخولي",
+    "signInButton": "تسجيل الدخول",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "emailValid": "عنوان البريد الإلكتروني غير صالح",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "Loading": "جاري التحميل",
+    "noAccount": "ليس لديك حساب؟",
+    "signUp": "أنشئ حسابا",
+    "passwordForgotten": "هل نسيت كلمة المرور؟",
+    "signUpMethod": "تسجيل الدخول باستخدام",
+    "sendMeResetLink": "إرسال رابط إعادة تعيين كلمة المرور",
+    "EnterYourEmail": "أدخل بريدك الإلكتروني"
+}
