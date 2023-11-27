@@ -58,8 +58,16 @@ export async function getStaticProps({ params }) {
     };
 }
 
-export async function getStaticPaths() {
-    const paths = [{ params: { id: "ASl4mMHj8pF4ZReIKyKl" } }];
+export async function getStaticPaths({ locales }) {
+    const paths = [];
+    for (const locale of locales) {
+        paths.push({
+            params: {
+                id: "ASl4mMHj8pF4ZReIKyKl",
+            },
+            locale,
+        });
+    }
     return { paths, fallback: "blocking" };
 }
 
