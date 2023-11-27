@@ -14,7 +14,7 @@ const DeveloperAvatar = ({ name, avatarUrl, description, href }) => {
                         layout='fill'
                     />
                 </div>
-                <p className='text-xl text-lime-800 font-semibold my-2'>
+                <p className='text-xl text-lime-600 font-semibold my-2'>
                     {name}
                 </p>
                 <p className='text-black text-base w-4/5 md:w-full '>

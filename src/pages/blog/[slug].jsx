@@ -7,13 +7,15 @@ import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/blogApi";
 const PostHeader = ({ title, image, imageAlt, date, timeToRead }) => {
     return (
         <>
-            <div className='mb-20 text-center'>
+            <div className='mb-20 text-center mt-14'>
                 <img
                     src={image}
                     alt={imageAlt}
                     className='w-full h-[35rem] object-cover rounded-lg'
                 />
-                <h1 className='text-3xl my-8'>{title}</h1>
+                <h1 className='text-4xl font-bold my-8 text-lime-600'>
+                    {title}
+                </h1>
                 <p>{`Time to read ${timeToRead} min`} </p>
                 <p>{`publiched: ${new Date(date).toDateString()}`}</p>
             </div>
@@ -22,7 +24,7 @@ const PostHeader = ({ title, image, imageAlt, date, timeToRead }) => {
 };
 const PostBody = ({ content }) => {
     return (
-        <div className='max-w-5xl mx-auto'>
+        <div className='max-w-3xl text-center mx-auto'>
             <div
                 className='prose-p:w-full lg:prose-xl  w-full lg:w-[58rem] prose prose-override-width text-black
          prose-headings:text-black

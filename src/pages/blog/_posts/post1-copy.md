@@ -1,13 +1,13 @@
 ---
-title: "The Power of Sharing: How Students Can Help Each Other Succeed"
+title: "How Students Can Help Each Other Succeed"
 description: "In the world of education, students often find themselves in a race to acquire knowledge and skills. While individual efforts are crucial, the power of sharing and helping fellow students should not be underestimated."
-coverImage: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHN0dWRlbnRzfGVufDB8fDB8fHww"
+coverImage: "https://images.unsplash.com/photo-1534009916851-7850ba974f9c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 date: "2023-10-26"
 author:
     name: Ismail Benlaredj
-    picture: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww"
+    picture: "https://images.unsplash.com/photo-1534009916851-7850ba974f9c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ogImage:
-    url: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHN0dWRlbnRzfGVufDB8fDB8fHww"
+    url: "https://images.unsplash.com/photo-1534009916851-7850ba974f9c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ---
 
 In the world of education, students often find themselves in a race to acquire knowledge and skills. While individual efforts are crucial, the power of sharing and helping fellow students should not be underestimated. This cooperative approach can lead to a more supportive and successful learning environment for everyone involved.
