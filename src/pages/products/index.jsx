@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { getAllItems } from "@/lib/firebase/firestoreFunctions";
@@ -11,7 +11,7 @@ import SearchBar from "@/components/searchbar";
 
 import { categories } from "@/constants";
 
-export default function ProductsPage({ items, queryParams }) {
+export default function ProductsPage({ queryParams }) {
     const {
         register,
         handleSubmit,
@@ -21,12 +21,19 @@ export default function ProductsPage({ items, queryParams }) {
     const [categoryFilter, setCategoryFilter] = useState(null);
     const [keywordFilter, setKeywordFilter] = useState("");
     const [locationFilter, setLocationFilter] = useState("");
+    const [items, setItems] = useState([]);
 
     const onSubmit = (data) => {
         setKeywordFilter(data.keyword || "");
         setLocationFilter(data.location || "");
     };
-
+    useEffect(() => {
+        async function getItems() {
+            let items = await getAllItems("items");
+            setItems(items);
+        }
+        getItems();
+    }, []);
     return (
         <div className='my-32'>
             <div className='my-28'>
@@ -133,12 +140,9 @@ export default function ProductsPage({ items, queryParams }) {
 
 export async function getServerSideProps({ query }) {
     const queryParams = query;
-    let items = await getAllItems("items");
-    items = JSON.parse(JSON.stringify(items));
 
     return {
         props: {
-            items,
             queryParams,
         },
     };
