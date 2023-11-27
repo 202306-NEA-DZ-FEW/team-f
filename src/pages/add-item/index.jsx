@@ -2,10 +2,10 @@ import { clsx } from "clsx";
 import { serverTimestamp } from "firebase/firestore";
 import { useRouter } from "next/router";
 import { appWithTranslation } from "next-i18next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
-import { setDoc, updateDocData } from "@/lib/firebase/firestoreFunctions";
+import { dbAddDoc, updateDocData } from "@/lib/firebase/firestoreFunctions";
 import UseUploadImage from "@/lib/hooks/useUploadImage";
 
 import Button from "@/components/button/Button";
@@ -63,7 +63,7 @@ function AddItemPage() {
                 profileImage: currentUser.photoURL,
             },
         };
-        await setDoc(itemData, "items");
+        await dbAddDoc(itemData, "items");
         reset();
     };
     const updateItem = async (data) => {
@@ -85,6 +85,16 @@ function AddItemPage() {
         await updateDocData("items", itemQueryData.id, itemData);
         router.push(`/item/${itemQueryData.id}`);
     };
+
+    useEffect(() => {
+        // Check if the user is not logged in and redirect to 404 page
+        if (!currentUser) {
+            router.push("/auth/signin");
+            return; // Stop further execution of the useEffect
+        }
+
+        // Fetch items only if the user is logged in
+    }, [currentUser]);
     return (
         <div className='mb-28'>
             <h1 className='text-center text-3xl font-semibold mt-16 mb-10 text-black'>
@@ -153,10 +163,42 @@ function AddItemPage() {
                         className='mt-1 p-2 block w-full border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green'
                     >
                         <option value='' defaultValue disabled>
-                            Select category{" "}
+                            Select category
                         </option>
-                        <option value='category2'>Category 2</option>
-                        <option value='category3'>Category 3</option>
+                        <option value='electronics'>Electronics</option>
+                        <option value='academic'>Academic</option>
+                        <option value='clothes'>Clothes</option>
+                        <option value='dorm'>Dorm</option>
+                        <option value='entertainment'>Entertainment</option>
+                        <option value='beauty'>Beauty</option>
+                        <option value='other'>Other</option>
+                    </select>
+                    {errors.category && (
+                        <span className='text-red'>
+                            {errors.category.message}
+                        </span>
+                    )}
+                </div>
+                <div className='mb-4'>
+                    <label
+                        htmlFor='category'
+                        className='block text-sm font-medium text-slate-700'
+                    >
+                        Item Listing
+                    </label>
+                    <select
+                        {...register("category", {
+                            required: "Select a category",
+                        })}
+                        id='category'
+                        className='mt-1 p-2 block w-full border border-slate-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green'
+                    >
+                        <option value='' defaultValue disabled>
+                            Select Listing
+                        </option>
+                        <option value='price'>Price</option>
+                        <option value='donate'>Donate</option>
+                        <option value='exchange'>Exchange </option>
                     </select>
                     {errors.category && (
                         <span className='text-red'>

@@ -14,6 +14,7 @@ import { useAuth } from "@/context/AuthContext";
 
 import AccountMenu from "./AccountMenu";
 import LanguageMenu from "./LanguageMenu";
+import Button from "../button/Button";
 
 const navigation = [
     { name: "Home", href: "/", icon: AiOutlineHome },
@@ -38,7 +39,7 @@ function Navbar() {
                                 <div className='flex items-center'>
                                     <Image
                                         className='w-auto h-14 sm:h-10'
-                                        src='./logo/hands.svg'
+                                        src='/logo/hands.svg'
                                         alt='Logo'
                                         width={300}
                                         height={200}
@@ -74,12 +75,18 @@ function Navbar() {
                             <AccountMenu logout={logout} />
                         ) : (
                             <div className='items-center justify-end hidden md:flex md:flex-1 lg:w-0'>
-                                <button className='text-base font-medium text-blck whitespace-nowrap hover:text-lime-700'>
+                                <Button
+                                    href='/auth/signin'
+                                    className='text-base bg-transparent font-medium text-lime-700 whitespace-nowrap hover:text-lime-700'
+                                >
                                     Sign in
-                                </button>
-                                <button className='inline-flex items-center justify-center px-4 py-2 ml-8 text-base font-medium text-white bg-lime-600 border border-transparent rounded-md shadow-sm whitespace-nowrap hover:opacity-75'>
+                                </Button>
+                                <Button
+                                    href='/auth/signup'
+                                    className=' bg-lime-600 hover:opacity-75'
+                                >
                                     Sign up
-                                </button>
+                                </Button>
                             </div>
                         )}
                         <LanguageMenu />
