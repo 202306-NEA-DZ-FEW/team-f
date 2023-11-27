@@ -41,12 +41,7 @@ function ItemPage({ item, otherItems }) {
     );
 }
 
-export async function getStaticPaths() {
-    const paths = [{ params: { id: "ASl4mMHj8pF4ZReIKyKl" } }];
-    return { paths, fallback: "blocking" };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
     let item = await getDocData("items", params.id);
     item = JSON.parse(JSON.stringify(item));
     let otherItems = await getItemByCategory(item.categories);
@@ -57,8 +52,6 @@ export async function getStaticProps({ params }) {
             item,
             otherItems,
         },
-
-        revalidate: 60 * 60,
     };
 }
 
