@@ -8,6 +8,7 @@ import {
     limit,
     orderBy,
     query,
+    setDoc,
     updateDoc,
     where,
 } from "firebase/firestore";
@@ -40,11 +41,17 @@ import { db } from "./firebase";
 */
 
 // set user or item
-export const setDoc = async (data, collectionStr) => {
-    await addDoc(collection(db, collectionStr), {
-        // user data or item data
-        ...data,
-    });
+export const dbAddDoc = async (data, collectionStr, docId) => {
+    if (docId) {
+        await setDoc(doc(db, collectionStr, docId), {
+            ...data,
+        });
+    } else {
+        await addDoc(collection(db, collectionStr), {
+            // user data or item data
+            ...data,
+        });
+    }
 };
 
 //get item

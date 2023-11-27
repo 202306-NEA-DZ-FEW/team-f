@@ -94,31 +94,38 @@ export default function ProductsPage({ items, queryParams }) {
                     <Button size='lg' type='submit' className='bg-lime-600'>
                         Search
                     </Button>
-                    <Button className='border-lime-600 border-2 text-lime-600 bg-transparent'>
-                        {" "}
+                    <Button
+                        href='/add-item'
+                        className='border-lime-600 border-2 text-lime-600 bg-transparent'
+                    >
                         Add item
                     </Button>
                 </div>
             </form>
             <div className='flex flex-wrap justify-between w-full mt-5'>
-                {items
-                    .filter((item) => {
-                        return (
-                            (!categoryFilter ||
-                                item.category === categoryFilter) &&
-                            (!keywordFilter ||
-                                item.name
-                                    .toLowerCase()
-                                    .includes(keywordFilter.toLowerCase())) &&
-                            (!locationFilter ||
-                                item.location
-                                    .toLowerCase()
-                                    .includes(locationFilter.toLowerCase()))
-                        );
-                    })
-                    .map((item) => (
-                        <ItemCard key={item.id} {...item} />
-                    ))}
+                {
+                    items &&
+                        items.map((item) => (
+                            <ItemCard key={item.id} item={item} />
+                        ))
+                    // .filter((item) => {
+                    //     return (
+                    //         (!categoryFilter ||
+                    //             item.category === categoryFilter) &&
+                    //         (!keywordFilter ||
+                    //             item.name
+                    //                 .toLowerCase()
+                    //                 .includes(
+                    //                     keywordFilter.toLowerCase(),
+                    //                 )) &&
+                    //         (!locationFilter ||
+                    //             item.location
+                    //                 .toLowerCase()
+                    //                 .includes(locationFilter.toLowerCase()))
+                    //     );
+                    // })
+                    //.map((item) => <ItemCard key={item.id} {...item} />)}
+                }
             </div>
         </div>
     );
@@ -126,7 +133,7 @@ export default function ProductsPage({ items, queryParams }) {
 
 export async function getServerSideProps({ query }) {
     const queryParams = query;
-    let items = await getAllItems("items", queryParams);
+    let items = await getAllItems("items");
     items = JSON.parse(JSON.stringify(items));
 
     return {

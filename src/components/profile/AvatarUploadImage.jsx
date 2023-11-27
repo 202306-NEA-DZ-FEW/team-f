@@ -16,11 +16,17 @@ function AvatarUploadImage({ image, setFile, file }) {
                     <div className='absolute top-0 left-0 right-0 bottom-0 bg-black opacity-60 rounded-full'></div>
                     <AiFillCamera className='text-5xl text-white z-10' />
                 </div>
-                <img
-                    src={file ? URL.createObjectURL(file) : image}
-                    alt='avatar'
-                    className='rounded-full object-cover w-full h-full'
-                />
+                {!image && !file ? (
+                    <div className='w-full h-full text-center rounded-full flex justify-center items-center bg-green text-white text-lg '>
+                        Add image
+                    </div>
+                ) : (
+                    <img
+                        src={file ? URL.createObjectURL(file) : image}
+                        alt='avatar'
+                        className='rounded-full object-cover w-full h-full'
+                    />
+                )}
             </div>
             <p className='text-sm text-black -mt-4'>
                 Change your profile picture
