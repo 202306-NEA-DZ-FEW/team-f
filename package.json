@@ -21,6 +21,7 @@
     "dependencies": {
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.0.0",
+        "core-js": "^3.33.3",
         "date-fns": "^2.30.0",
         "eslint-plugin-jest": "^27.4.2",
         "firebase": "^10.5.0",
