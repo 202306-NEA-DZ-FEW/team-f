@@ -11,7 +11,7 @@ import SearchBar from "@/components/searchbar";
 
 import { categories } from "@/constants";
 
-export default function ProductsPage({ queryParams }) {
+export default function ProductsPage() {
     const {
         register,
         handleSubmit,
@@ -63,7 +63,7 @@ export default function ProductsPage({ queryParams }) {
                                 message: "30 character max",
                             },
                         }}
-                        queryParams={queryParams}
+                        queryParams={{}}
                     />
 
                     {/* <Input
@@ -136,14 +136,4 @@ export default function ProductsPage({ queryParams }) {
             </div>
         </div>
     );
-}
-
-export async function getServerSideProps({ query }) {
-    const queryParams = query;
-
-    return {
-        props: {
-            queryParams,
-        },
-    };
 }
