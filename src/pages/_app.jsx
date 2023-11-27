@@ -15,4 +15,4 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;

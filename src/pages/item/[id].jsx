@@ -41,10 +41,14 @@ function ItemPage({ item, otherItems }) {
     );
 }
 
+export async function getStaticPaths() {
+    const paths = [{ params: { id: "ASl4mMHj8pF4ZReIKyKl" } }];
+    return { paths, fallback: "blocking" };
+}
+
 export async function getStaticProps({ params }) {
     let item = await getDocData("items", params.id);
     item = JSON.parse(JSON.stringify(item));
-
     let otherItems = await getItemByCategory(item.categories);
     otherItems = JSON.parse(JSON.stringify(otherItems));
 
@@ -56,19 +60,6 @@ export async function getStaticProps({ params }) {
 
         revalidate: 60 * 60,
     };
-}
-
-export async function getStaticPaths({ locales }) {
-    const paths = [];
-    for (const locale of locales) {
-        paths.push({
-            params: {
-                id: "ASl4mMHj8pF4ZReIKyKl",
-            },
-            locale,
-        });
-    }
-    return { paths, fallback: "blocking" };
 }
 
 export default ItemPage;
