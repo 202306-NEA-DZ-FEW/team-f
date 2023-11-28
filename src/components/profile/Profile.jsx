@@ -47,7 +47,7 @@ const Profile = () => {
                 <div className='flex items-center w-full p-4 my-8  rounded-2xl justify-center  gap-8 border border-gray '>
                     <div className='rounded-full w-36 h-36 '>
                         {!avatarUrl ? (
-                            <div className='w-full h-full rounded-full flex justify-center items-center bg-green text-white text-4xl font-bold uppercase'>
+                            <div className='w-full h-full rounded-full flex justify-center items-center bg-lime-600 text-white text-4xl font-bold uppercase'>
                                 {name && name[0]}
                             </div>
                         ) : (
