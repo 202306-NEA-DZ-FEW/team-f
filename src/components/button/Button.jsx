@@ -8,7 +8,7 @@ const buttonVariantStyle = cva(
         variants: {
             variant: {
                 default:
-                    "bg-green text-white hover:opacity-90 active:ring-2 active:ring-green ",
+                    "bg-lime-600 text-white hover:opacity-90 active:ring-2 active:ring-green ",
                 outlinePrimary:
                     "bg-transparent border-2 border-green text-green hover:bg-emerald-100 active:ring-2 active:ring-green ",
                 outlineSecondary:
