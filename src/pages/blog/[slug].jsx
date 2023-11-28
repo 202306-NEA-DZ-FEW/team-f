@@ -7,7 +7,7 @@ import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/blogApi";
 const PostHeader = ({ title, image, imageAlt, date, timeToRead }) => {
     return (
         <>
-            <div className='mb-20 text-center'>
+            <div className='mb-20 text-center mt-10'>
                 <img
                     src={image}
                     alt={imageAlt}
