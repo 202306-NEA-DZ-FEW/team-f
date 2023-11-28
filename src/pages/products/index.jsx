@@ -15,6 +15,7 @@ export default function ProductsPage() {
     const {
         register,
         handleSubmit,
+        setValue,
         formState: { errors, isSubmitting },
     } = useForm();
 
@@ -22,11 +23,13 @@ export default function ProductsPage() {
     const [keywordFilter, setKeywordFilter] = useState("");
     const [locationFilter, setLocationFilter] = useState("");
     const [items, setItems] = useState([]);
+    const [filteredItems, setFilteredItems] = useState([]);
 
     const onSubmit = (data) => {
         setKeywordFilter(data.keyword || "");
         setLocationFilter(data.location || "");
     };
+
     useEffect(() => {
         async function getItems() {
             let items = await getAllItems("items");
@@ -34,6 +37,40 @@ export default function ProductsPage() {
         }
         getItems();
     }, []);
+
+    useEffect(() => {
+        // Function to filter items based on category, keyword, and location
+        const filterItems = () => {
+            const filtered = items.filter((item) => {
+                return (
+                    (!categoryFilter || item.category === categoryFilter) &&
+                    (!keywordFilter ||
+                        (item.name &&
+                            item.name
+                                .toLowerCase()
+                                .includes(keywordFilter.toLowerCase())) ||
+                        (item.description &&
+                            item.description
+                                .toLowerCase()
+                                .includes(keywordFilter.toLowerCase()))) &&
+                    (!locationFilter ||
+                        (item.location &&
+                            item.location
+                                .toLowerCase()
+                                .includes(locationFilter.toLowerCase())))
+                );
+            });
+            setFilteredItems(filtered);
+        };
+
+        filterItems();
+    }, [items, categoryFilter, keywordFilter, locationFilter]);
+
+    const handleKeywordChange = (value) => {
+        setKeywordFilter(value);
+        setValue("keyword", value);
+    };
+
     return (
         <div className='my-32'>
             <div className='my-28'>
@@ -53,35 +90,24 @@ export default function ProductsPage() {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex flex-row justify-start gap-5 items-center'>
-                    <SearchBar
-                        requiredMessage={false}
-                        register={register}
-                        errors={errors}
-                        validation={{
-                            maxLength: {
-                                value: 30,
-                                message: "30 character max",
-                            },
-                        }}
-                        queryParams={{}}
-                    />
-
-                    {/* <Input
+                    <Input
                         className='w-1/3 -ml-5'
                         name='keyword'
                         type='text'
                         labelText=''
-                        placeholder='ex: keyboard'
+                        placeholder='Search by name or description'
                         requiredMessage={false}
                         register={register}
+                        onChange={(e) => handleKeywordChange(e.target.value)}
+                        value={keywordFilter}
                         errors={errors}
                         validation={{
                             maxLength: {
-                                value: 30,
-                                message: "30 character max",
+                                value: 15,
+                                message: "15 character max",
                             },
                         }}
-                    /> */}
+                    />
                     <Input
                         className='w-1/5 rounded-xl'
                         name='location'
@@ -110,29 +136,9 @@ export default function ProductsPage() {
                 </div>
             </form>
             <div className='flex flex-wrap justify-between w-full mt-5'>
-                {
-                    items &&
-                        items.map((item) => (
-                            <ItemCard key={item.id} item={item} />
-                        ))
-                    // .filter((item) => {
-                    //     return (
-                    //         (!categoryFilter ||
-                    //             item.category === categoryFilter) &&
-                    //         (!keywordFilter ||
-                    //             item.name
-                    //                 .toLowerCase()
-                    //                 .includes(
-                    //                     keywordFilter.toLowerCase(),
-                    //                 )) &&
-                    //         (!locationFilter ||
-                    //             item.location
-                    //                 .toLowerCase()
-                    //                 .includes(locationFilter.toLowerCase()))
-                    //     );
-                    // })
-                    //.map((item) => <ItemCard key={item.id} {...item} />)}
-                }
+                {filteredItems.map((item) => (
+                    <ItemCard key={item.id} item={item} />
+                ))}
             </div>
         </div>
     );
