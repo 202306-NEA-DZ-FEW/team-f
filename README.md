@@ -1,8 +1,8 @@
-# Welcome to Let's Share
+# Welcome to Shareity
 
 ## Project Description
 
-Join Let's Share, where sharing is caring! Experience the magic of seamless connections as surplus food, stylish clothes, and cozy furniture find new homes through our user-friendly interface. Let's Share isn't just a platform; it's a front-end showcase, weaving together technology and warmth. Transform your daily exchanges into shared moments. Join us – where front-end innovation meets community connection!
+Join Shareity, where sharing is caring! Experience the magic of seamless connections as surplus food, stylish clothes, and cozy furniture find new homes through our user-friendly interface. Shareity isn't just a platform; it's a front-end showcase, weaving together technology and warmth. Transform your daily exchanges into shared moments. Join us – where front-end innovation meets community connection!
 
 ## Key Features
 
@@ -32,12 +32,12 @@ Share and reuse products like clothes and furniture amongst the community
 
 ## Team Members
 
-Ismail Benlaredj : https://github.com/ismail-benlaredj
-Darine Tag : https://github.com/darinetag
-Hadj Said Bouras : https://github.com/Hadj-Said-Bouras
-Mohamed Cheraitia : https://github.com/mohamed-cheraitia
-Laid Benglia : https://github.com/LaidBengli
-Sara Bagache : https://github.com/SaraBegache
+- Ismail Benlaredj : https://github.com/ismail-benlaredj <br>
+- Darine Tag : https://github.com/darinetag <br>
+- Hadj Said Bouras : https://github.com/Hadj-Said-Bouras <br>
+- Mohamed Cheraitia : https://github.com/mohamed-cheraitia <br>
+- Laid Benglia : https://github.com/LaidBengli <br>
+- Sara Bagache : https://github.com/SaraBegache <br>
 
 ## Getting Started
 
